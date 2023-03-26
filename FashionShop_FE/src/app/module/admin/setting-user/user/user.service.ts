@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Client, User } from '../../../../@core/data/FashionShopApi.service';
+import { Client, Role, User } from '../../../../@core/data/FashionShopApi.service';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +27,9 @@ export class UserService {
 
   delete(id: number): Observable<void> {
     return this._api.usersDELETE(id);
+  }
+
+  selectRole(): Observable<Role[]> {
+    return this._api.rolesAll();
   }
 }

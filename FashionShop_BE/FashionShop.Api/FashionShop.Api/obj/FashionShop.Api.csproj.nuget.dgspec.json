@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FashionShop\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\FashionShop.Api.csproj": {}
+    "E:\\PhamVanTruong\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\FashionShop.Api.csproj": {}
   },
   "projects": {
-    "E:\\FashionShop\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\FashionShop.Api.csproj": {
+    "E:\\PhamVanTruong\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\FashionShop.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FashionShop\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\FashionShop.Api.csproj",
+        "projectUniqueName": "E:\\PhamVanTruong\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\FashionShop.Api.csproj",
         "projectName": "FashionShop.Api",
-        "projectPath": "E:\\FashionShop\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\FashionShop.Api.csproj",
+        "projectPath": "E:\\PhamVanTruong\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\FashionShop.Api.csproj",
         "packagesPath": "C:\\Users\\pvtru\\.nuget\\packages\\",
-        "outputPath": "E:\\FashionShop\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\obj\\",
+        "outputPath": "E:\\PhamVanTruong\\FashionShop_BE\\FashionShop.Api\\FashionShop.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
