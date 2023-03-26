@@ -5,7 +5,6 @@ import { CommonService } from '../../../../../@core/customs/common.service';
 import { AboutsCrudComponent } from '../abouts-crud/abouts-crud.component';
 import { AboutsService } from '../abouts.service';
 import { DialogConfirmComponent } from '../../../../../@theme/components/template/dialog/dialog-confirm/dialog-confirm.component';
-import { About } from '../../../../../@core/data/FashionShopApi.service';
 
 @Component({
   selector: 'ngx-abouts-index',
@@ -20,7 +19,7 @@ export class AboutsIndexComponent  {
     private _service: AboutsService
   ) { }
 
-  target: About[];
+  target: any[];
 
   ngon(): void {
     this.loadData();
@@ -28,7 +27,10 @@ export class AboutsIndexComponent  {
 
   loadData(){
     this._service.selectAll().subscribe(res => {
-      this.target = res;
+      if(res){
+        this.target = res;
+      }
+      
     });
   }
 
