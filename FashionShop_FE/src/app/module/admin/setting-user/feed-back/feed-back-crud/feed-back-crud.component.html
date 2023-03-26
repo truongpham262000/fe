@@ -1,1 +1,101 @@
-<p>feed-back-crud works!</p>
+<form #frm="ngForm" (ngSubmit)="save()">
+    <nb-card>
+        <nb-card-header class="nb-card-header">
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <label *ngIf="dataRef.actionType === statusAction.create">Thêm mới {{ title }}</label>
+                <label *ngIf="dataRef.actionType === statusAction.edit">Cập nhật {{ title }}</label>
+                <label *ngIf="dataRef.actionType === statusAction.detail">Chi tiết {{ title }}</label>
+            </div>
+            </div>
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Tên tài khoản</label>
+                            <ng-select [items]="listUser" bindLabel="userName" bindValue="userId"
+                                [(ngModel)]="target.userId" #userId="ngModel" name="userId"
+                                [disabled]="dataRef.actionType === statusAction.detail" required>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Email</label>
+                            <input type="mail" class="form-control" name="email"
+                                [(ngModel)]="target.email"
+                                #email="ngModel" maxlength="200"
+                                [disabled]="dataRef.actionType === statusAction.detail" required/>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Trạng thái</label>
+                            <ng-select [items]="listStatus" bindLabel="text" bindValue="value"
+                                [(ngModel)]="target.status" #status="ngModel" name="status"
+                                [disabled]="dataRef.actionType === statusAction.detail" required>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Địa chỉ</label>
+                            <input type="text" class="form-control" name="address"
+                                [(ngModel)]="target.address"
+                                #address="ngModel" maxlength="200"
+                                [disabled]="dataRef.actionType === statusAction.detail" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Tên người dùng</label>
+                            <input type="text" class="form-control" name="name"
+                                [(ngModel)]="target.name" #name="ngModel" maxlength="200" required
+                                [disabled]="dataRef.actionType === statusAction.detail" />
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Số điện thoại</label>
+                            <input type="text" class="form-control" name="phone"
+                                [(ngModel)]="target.phone"
+                                #phone="ngModel" maxlength="12"
+                                [disabled]="dataRef.actionType === statusAction.detail" required="true">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Ngày nhận phản hồi</label>
+                            <input type="date" class="form-control" [(ngModel)]="target.createdDate"
+                                #createdDate="ngModel" required name="createdDate"
+                                [disabled]="dataRef.actionType === statusAction.detail" />
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label">Nội dung phản hồi</label>
+                            <input type="text" class="form-control" name="content"
+                                [(ngModel)]="target.content"
+                                #content="ngModel" maxlength="200"
+                                [disabled]="dataRef.actionType === statusAction.detail"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer class="text-right">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 text-right">
+                    <ngx-btn-submit [disabled]="frm.invalid"
+                        *ngIf="dataRef.actionType !== statusAction.detail"></ngx-btn-submit>&nbsp;&nbsp;
+                    <ngx-btn-close (click)="closeDialog(true)"></ngx-btn-close>
+                </div>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+</form>
+  

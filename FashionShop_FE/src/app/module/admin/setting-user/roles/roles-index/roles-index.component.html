@@ -29,8 +29,8 @@
                 <tbody>
                     <tr *ngFor="let item of target;let i = index">
                         <td class="text-center align-middle">{{ i + 1 }}</td>
-                        <td class="align-middle">{{ item.rolesId }}</td>
-                        <td class="align-middle">{{ item.rolesName }}</td>
+                        <td class="align-middle text-center">{{ item.rolesId }}</td>
+                        <td class="align-middle text-center">{{ item.rolesName }}</td>
                         <td class="text-center align-middle">
                             <ngx-icon-info title="Xem chi tiết" style="cursor: pointer;" (click)="openDetailDialog(item.rolesId)"></ngx-icon-info>&nbsp;&nbsp;
                             <ngx-icon-edit title="Cập nhật" style="cursor: pointer;" (click)="openEditDialog(item.rolesId)"></ngx-icon-edit>&nbsp;&nbsp;

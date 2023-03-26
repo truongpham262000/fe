@@ -33,7 +33,7 @@ export class RolesIndexComponent implements OnInit {
 
   openCreateDialog(){
     this.dialog.open(RolesCrudComponent,
-      this.commonService.configDialog("40%",{
+      this.commonService.configDialog("30%",{
         key: null,
         actionType: STATUS_ACTION.create
       })
@@ -48,7 +48,7 @@ export class RolesIndexComponent implements OnInit {
 
   openDetailDialog(key: number){
     this.dialog.open(RolesCrudComponent,
-      this.commonService.configDialog("40%",{
+      this.commonService.configDialog("30%",{
         key: key,
         actionType: STATUS_ACTION.detail
       }))
@@ -58,7 +58,7 @@ export class RolesIndexComponent implements OnInit {
 
   openEditDialog(key: number){
     this.dialog.open(RolesCrudComponent,
-      this.commonService.configDialog("40%",{
+      this.commonService.configDialog("30%",{
         key: key,
         actionType: STATUS_ACTION.edit
       }))

@@ -93,5 +93,4 @@ export class UserIndexComponent implements OnInit {
         }
       })
   }
-
 }
