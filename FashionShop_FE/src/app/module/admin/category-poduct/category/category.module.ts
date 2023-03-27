@@ -1,8 +1,11 @@
+import { NgSelectModule } from '@ng-select/ng-select';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CategoryIndexComponent } from './category-index/category-index.component';
 import { CategoryCrudComponent } from './category-crud/category-crud.component';
 import { CategoryRoutingModule } from './category-routing.module';
+import { FormsModule } from '@angular/forms';
+import { NbCardModule } from '@nebular/theme';
+import { ThemeModule } from '../../../../@theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -10,8 +13,11 @@ import { CategoryRoutingModule } from './category-routing.module';
     CategoryCrudComponent
   ],
   imports: [
-    CommonModule,
-    CategoryRoutingModule
+    CategoryRoutingModule,
+    FormsModule,
+    NbCardModule,
+    ThemeModule,
+    NgSelectModule
   ]
 })
 export class CategoryModule { }

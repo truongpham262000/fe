@@ -57,7 +57,7 @@ export class FeedBackCrudComponent implements OnInit {
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.closeDialog(true);
         } else {
-          this.commonService.toastrDanger("Không thể thêm người dùng này !!!");
+          this.commonService.toastrDanger("Không thể thêm phản hồi này !!!");
           this.closeDialog(false);
         }
       })
@@ -67,7 +67,7 @@ export class FeedBackCrudComponent implements OnInit {
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.closeDialog(true);
         } else {
-          this.commonService.toastrDanger("Không thể cập nhật bài viết !!!");
+          this.commonService.toastrDanger("Không thể cập nhật phản hồi !!!");
           this.closeDialog(false);
         }
       })

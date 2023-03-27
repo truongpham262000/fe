@@ -1,4 +1,3 @@
-import { FormsModule } from './../../pages/forms/forms.module';
 import { NgModule } from '@angular/core';
 import { AdminRoutingModule } from './admin-routing.module';
 import { CartProductModule } from './cart-product/cart-product.module';
@@ -8,6 +7,7 @@ import { SettingUserModule } from './setting-user/setting-user.module';
 import { ShowAboutModule } from './show-about/show-about.module';
 import { NbCardModule } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [

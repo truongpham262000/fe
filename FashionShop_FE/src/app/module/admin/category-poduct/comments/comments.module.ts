@@ -1,8 +1,12 @@
+import { NgSelectModule } from '@ng-select/ng-select';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CommentsIndexComponent } from './comments-index/comments-index.component';
 import { CommentsCrudComponent } from './comments-crud/comments-crud.component';
 import { CommentsRoutingModule } from './comments-routing.module';
+import { FormsModule } from '@angular/forms';
+import { NbCardModule } from '@nebular/theme';
+import { ThemeModule } from '../../../../@theme/theme.module';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -13,7 +17,11 @@ import { CommentsRoutingModule } from './comments-routing.module';
   ],
   imports: [
     CommonModule,
-    CommentsRoutingModule
+    CommentsRoutingModule,
+    FormsModule,
+    NbCardModule,
+    NgSelectModule,
+    ThemeModule
   ]
 })
 export class CommentsModule { }

@@ -4,6 +4,7 @@ import { ModuleComponent } from './module.component';
 import { ThemeModule } from '../@theme/theme.module';
 import { NbMenuModule } from '@nebular/theme';
 import { AdminModule } from './admin/admin.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ModuleComponent],
@@ -12,6 +13,7 @@ import { AdminModule } from './admin/admin.module';
     AdminModule,
     ThemeModule,
     NbMenuModule,
+    FormsModule
   ]
 })
 export class ModuleModule { }

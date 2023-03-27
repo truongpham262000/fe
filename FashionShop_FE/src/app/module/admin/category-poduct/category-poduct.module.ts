@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { CategoryPoductRoutingModule } from './category-poduct-routing.module';
 import { CategoryModule } from './category/category.module';
 import { CommentsModule } from './comments/comments.module';
@@ -14,8 +14,8 @@ import { SizeProductModule } from './size-product/size-product.module';
     CommonModule,
     CategoryPoductRoutingModule,
     CategoryModule,
-    CommentsModule,
     FavoritesModule,
+    CommentsModule,
     ProductModule,
     SalesModule,
     SizeProductModule

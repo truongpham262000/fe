@@ -49,7 +49,7 @@ export class RolesCrudComponent implements OnInit {
           this.loadData();
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
         } else {
-          this.commonService.toastrDanger("Không thể thêm người dùng này !!!");
+          this.commonService.toastrDanger("Không thể thêm quyền này !!!");
           this.closeDialog(false);
         }
       })
@@ -60,7 +60,7 @@ export class RolesCrudComponent implements OnInit {
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.closeDialog(true);
         } else {
-          this.commonService.toastrDanger("Không thể cập nhật bài viết !!!");
+          this.commonService.toastrDanger("Không thể cập nhật quyền !!!");
           this.closeDialog(false);
         }
       })

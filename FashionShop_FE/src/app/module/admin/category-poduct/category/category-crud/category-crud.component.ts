@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CommonService, ConvertDatePipe } from '../../../../../@core/customs/common.service';
+import { STATUS_ACTION, SUCCESS_NOTICE } from '../../../../../@core/customs/constants';
+import { Category } from '../../../../../@core/data/FashionShopApi.service';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'ngx-category-crud',
@@ -7,9 +12,65 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryCrudComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private commonService: CommonService,
+    private _service: CategoryService,
+    @Inject(MAT_DIALOG_DATA) public dataRef:{ key: number, actionType: number },
+    private dialogRef: MatDialogRef<CategoryCrudComponent>
+  ) { }
+
+  statusAction = STATUS_ACTION;
+  title: string = 'danh mục';
+  target: Category = new Category();
+  listStatus: Object[] = [{text: "Còn hàng",value: 1},{text: "Hết hàng", value: 0}];
 
   ngOnInit(): void {
+    if(this.dataRef.actionType !== this.statusAction.create){
+      this.loadData();
+    }
+  }
+
+  loadData(): void {
+    //Select data User
+    this._service.selectOne(this.dataRef.key).subscribe((res) => {
+      if(res){
+        this.target = res;
+        this.target.createdDate = this.target.createdDate? new ConvertDatePipe().transform(this.target.createdDate) : null;
+      } else {
+        this.commonService.toastrDanger("Không tìm thấy dữ liệu !!!");
+        this.closeDialog(true)
+      }
+    })
+  }
+
+  save(): void {
+    this.target.createdDate = this.target.createdDate ? new Date(this.target.createdDate): null;
+    if(this.dataRef.actionType === STATUS_ACTION.create){
+      this._service.insert(this.target).subscribe((res) => {
+        if(res){
+          this.commonService.toastrSuccess(SUCCESS_NOTICE);
+          this.closeDialog(true);
+        } else {
+          this.closeDialog(false);
+          this.commonService.toastrDanger("Không thể thêm danh mục này !!!");
+        }
+      })
+    } else {
+      this._service.update(this.dataRef.key,this.target).subscribe((res) => {
+        console.log(res)
+        if(res === null){
+          this.commonService.toastrSuccess(SUCCESS_NOTICE);
+          this.closeDialog(true);
+        } else {
+          this.commonService.toastrDanger("Không thể cập nhật danh mục !!!");
+          this.closeDialog(false);
+        }
+      })
+    }
+  }
+
+  closeDialog(value?: boolean): void {
+    this.dialogRef.close(value)
   }
 
 }
