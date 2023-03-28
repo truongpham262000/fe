@@ -1,1 +1,61 @@
-<p>coupon-crud works!</p>
+<form #frm="ngForm" (ngSubmit)="save()">
+    <nb-card>
+        <nb-card-header class="nb-card-header">
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <label *ngIf="dataRef.actionType === statusAction.create">Thêm mới {{ title }}</label>
+                <label *ngIf="dataRef.actionType === statusAction.edit">Cập nhật {{ title }}</label>
+                <label *ngIf="dataRef.actionType === statusAction.detail">Chi tiết {{ title }}</label>
+            </div>
+            </div>
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Mã giảm giá</label>
+                            <input type="text" class="form-control" [(ngModel)]="target.code" 
+                                #code="ngModel" name="code"
+                                [disabled]="dataRef.actionType === statusAction.detail" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Số lượng</label>
+                            <input type="number" class="form-control" [(ngModel)]="target.count" 
+                                #count="ngModel" name="count" min="0"
+                                [disabled]="dataRef.actionType === statusAction.detail" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Giảm giá khuyến mãi</label>
+                            <input type="number" class="form-control" [(ngModel)]="target.promotion" 
+                                #promotion="ngModel" name="promotion" min="0"
+                                [disabled]="dataRef.actionType === statusAction.detail" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Mô tả</label>
+                            <input type="text" class="form-control" [(ngModel)]="target.describe" 
+                                #describe="ngModel" name="describe"
+                                [disabled]="dataRef.actionType === statusAction.detail" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer class="text-right">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 text-right">
+                    <ngx-btn-submit [disabled]="frm.invalid"
+                        *ngIf="dataRef.actionType !== statusAction.detail"></ngx-btn-submit>&nbsp;&nbsp;
+                    <ngx-btn-close (click)="closeDialog(true)"></ngx-btn-close>
+                </div>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+</form>
+  

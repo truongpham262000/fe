@@ -34,7 +34,7 @@ export class SalesIndexComponent implements OnInit {
 
   openCreateDialog(){
     this.dialog.open(SalesCrudComponent,
-      this.commonService.configDialog("50%",{
+      this.commonService.configDialog("40%",{
         key: null,
         actionType: STATUS_ACTION.create
       })
@@ -49,7 +49,7 @@ export class SalesIndexComponent implements OnInit {
 
   openDetailDialog(key: number){
     this.dialog.open(SalesCrudComponent,
-      this.commonService.configDialog("50%",{
+      this.commonService.configDialog("40%",{
         key: key,
         actionType: STATUS_ACTION.detail
       }))
@@ -59,7 +59,7 @@ export class SalesIndexComponent implements OnInit {
 
   openEditDialog(key: number){
     this.dialog.open(SalesCrudComponent,
-      this.commonService.configDialog("50%",{
+      this.commonService.configDialog("40%",{
         key: key,
         actionType: STATUS_ACTION.edit
       }))

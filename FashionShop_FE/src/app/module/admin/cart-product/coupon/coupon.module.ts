@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CouponIndexComponent } from './coupon-index/coupon-index.component';
 import { CouponCrudComponent } from './coupon-crud/coupon-crud.component';
 import { CouponRoutingModule } from './coupon-routing.module';
+import { FormsModule } from '@angular/forms';
+import { ThemeModule } from '../../../../@theme/theme.module';
+import { NbCardModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -10,8 +12,10 @@ import { CouponRoutingModule } from './coupon-routing.module';
     CouponCrudComponent
   ],
   imports: [
-    CommonModule,
-    CouponRoutingModule
+    CouponRoutingModule,
+    FormsModule,
+    ThemeModule,
+    NbCardModule
   ]
 })
 export class CouponModule { }

@@ -21,7 +21,7 @@ export class AboutsIndexComponent  {
 
   target: any[];
 
-  ngon(): void {
+  ngOnInit(): void {
     this.loadData();
   }
 
