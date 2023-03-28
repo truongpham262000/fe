@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CartItemIndexComponent } from './cart-item-index/cart-item-index.component';
 import { CartItemCrudComponent } from './cart-item-crud/cart-item-crud.component';
 import { CartItemRoutingModule } from './cart-item-routing.module';
+import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NbCardModule } from '@nebular/theme';
+import { ThemeModule } from '../../../../@theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -10,8 +13,11 @@ import { CartItemRoutingModule } from './cart-item-routing.module';
     CartItemCrudComponent
   ],
   imports: [
-    CommonModule,
-    CartItemRoutingModule
+    CartItemRoutingModule,
+    FormsModule,
+    NgSelectModule,
+    NbCardModule,
+    ThemeModule
   ]
 })
 export class CartItemModule { }
