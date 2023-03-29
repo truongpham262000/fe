@@ -30,7 +30,6 @@ export class SliderIndexComponent  {
       if(res){
         this.target = res;
       }
-      
     });
   }
 

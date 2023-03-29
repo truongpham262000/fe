@@ -31,7 +31,7 @@ export class AboutsCrudComponent  {
       this.target.image = null;
     }
   }
-
+  
   loadData(): void {
     this._service.selectOne(this.dataRef.key).subscribe((res) => {
       if(res != null){

@@ -30,7 +30,6 @@ export class AboutsIndexComponent  {
       if(res){
         this.target = res;
       }
-      
     });
   }
 

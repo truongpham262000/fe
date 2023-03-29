@@ -1,3 +1,4 @@
+import { About } from './../../../../@core/data/FashionShopApi.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Client, Slider } from '../../../../@core/data/FashionShopApi.service';

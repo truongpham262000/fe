@@ -93,5 +93,4 @@ export class CartIndexComponent implements OnInit {
         }
       })
   }
-
 }
