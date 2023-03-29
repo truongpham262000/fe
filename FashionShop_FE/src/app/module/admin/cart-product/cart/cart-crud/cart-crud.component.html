@@ -1,1 +1,198 @@
-<p>cart-crud works!</p>
+<form #frm="ngForm" (ngSubmit)="save()">
+    <nb-card>
+        <nb-card-header class="nb-card-header">
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <label *ngIf="dataRef.actionType === statusAction.create">Thêm mới {{ title }}</label>
+                <label *ngIf="dataRef.actionType === statusAction.edit">Cập nhật {{ title }}</label>
+                <label *ngIf="dataRef.actionType === statusAction.detail">Chi tiết {{ title }}</label>
+            </div>
+            </div>
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 d-flex p-0">
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Tên tài khoản</label>
+                                <ng-select [items]="listUserId" bindLabel="userName" bindValue="userId"
+                                    name="userId" #userId="ngModel" [(ngModel)]="target.userId"
+                                    [disabled]="dataRef.actionType === statusAction.detail" required
+                                >
+                                </ng-select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Họ và tên</label>
+                                <input type="text" class="form-control" name="metaTitle"
+                                    [(ngModel)]="target.fullName" #metaTitle="ngModel" maxlength="200" required
+                                    [disabled]="dataRef.actionType === statusAction.detail" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Số điện thoại</label>
+                            <input type="text" class="form-control" name="phoneNumber"
+                                [(ngModel)]="target.phoneNumber"
+                                #phoneNumber="ngModel" maxlength="200"
+                                [disabled]="dataRef.actionType === statusAction.detail" required/>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Email</label>
+                            <input type="text" class="form-control" name="email"
+                                [(ngModel)]="target.email"
+                                #email="ngModel" maxlength="200"
+                                [disabled]="dataRef.actionType === statusAction.detail" required/>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 d-flex p-0">
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Giảm giá</label>
+                                <input type="number" class="form-control" name="discount"
+                                    [(ngModel)]="target.discount"
+                                    #discount="ngModel" maxlength="250"
+                                    [disabled]="dataRef.actionType === statusAction.detail" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Thuế</label>
+                                <input type="number" class="form-control" name="vat"
+                                    [(ngModel)]="target.vat"
+                                    #vat="ngModel" maxlength="250"
+                                    [disabled]="dataRef.actionType === statusAction.detail" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 d-flex p-0">
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Phí vận chuyển</label>
+                                <input type="text" class="form-control" name="shipping"
+                                    [(ngModel)]="target.shipping"
+                                    #shipping="ngModel" maxlength="250"
+                                    [disabled]="dataRef.actionType === statusAction.detail" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label">Tổng tiền</label>
+                                <input type="number" class="form-control" name="total"
+                                    [(ngModel)]="target.total"
+                                    #total="ngModel" maxlength="250"
+                                    [disabled]="dataRef.actionType === statusAction.detail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Mã giảm giá</label>
+                            <ng-select [items]="listCouponId" bindLabel="code" bindValue="couponId"
+                                name="couponId" #couponId="ngModel" [(ngModel)]="target.couponId"
+                                [disabled]="dataRef.actionType === statusAction.detail" required
+                            >
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex p-0">
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Phương thức thanh toán</label>
+                                <ng-select [items]="listPaymentId" bindLabel="paymentName" bindValue="paymentId"
+                                    name="paymentId" #paymentId="ngModel" [(ngModel)]="target.paymentId"
+                                    [disabled]="dataRef.actionType === statusAction.detail" required
+                                >
+                                </ng-select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Trạng thái</label>
+                                <ng-select [items]="listStatus" bindLabel="text" bindValue="value"
+                                    [(ngModel)]="target.status" #status="ngModel" name="status"
+                                    [disabled]="dataRef.actionType === statusAction.detail" required>
+                                </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label required">Mặt hàng giảm giá</label>
+                            <input type="text" class="form-control" name="itemDiscount"
+                                [(ngModel)]="target.itemDiscount"
+                                #itemDiscount="ngModel" maxlength="250"
+                                [disabled]="dataRef.actionType === statusAction.detail" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 d-flex p-0">
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Tỉnh</label>
+                                <input type="text" class="form-control" name="province"
+                                    [(ngModel)]="target.province"
+                                    #province="ngModel" maxlength="250"
+                                    [disabled]="dataRef.actionType === statusAction.detail" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label required">Thành phố</label>
+                                <input type="text" class="form-control" name="city"
+                                    [(ngModel)]="target.city"
+                                    #city="ngModel" maxlength="250"
+                                    [disabled]="dataRef.actionType === statusAction.detail" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 d-flex p-0">
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label">Quận / Huyện</label>
+                                <input type="text" class="form-control" name="country"
+                                    [(ngModel)]="target.country"
+                                    #country="ngModel" maxlength="250"
+                                    [disabled]="dataRef.actionType === statusAction.detail">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label">Ngày tạo</label>
+                                <input type="date" class="form-control" name="createAt"
+                                    [(ngModel)]="target.createAt"
+                                    #createAt="ngModel" maxlength="250"
+                                    [disabled]="dataRef.actionType === statusAction.detail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <div class="form-group">
+                    <label class="control-label">Ghi chú</label>
+                    <input type="text" class="form-control" name="content"
+                        [(ngModel)]="target.content"
+                        #content="ngModel" maxlength="250"
+                        [disabled]="dataRef.actionType === statusAction.detail">
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer class="text-right">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 text-right">
+                    <ngx-btn-submit [disabled]="frm.invalid"
+                        *ngIf="dataRef.actionType !== statusAction.detail"></ngx-btn-submit>&nbsp;&nbsp;
+                    <ngx-btn-close (click)="closeDialog(true)"></ngx-btn-close>
+                </div>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+</form>
+  

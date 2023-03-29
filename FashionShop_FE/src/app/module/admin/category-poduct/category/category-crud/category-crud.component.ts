@@ -57,7 +57,6 @@ export class CategoryCrudComponent implements OnInit {
       })
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
-        console.log(res)
         if(res === null){
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.closeDialog(true);
