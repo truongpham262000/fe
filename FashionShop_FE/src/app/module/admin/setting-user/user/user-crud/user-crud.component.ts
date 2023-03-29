@@ -50,9 +50,9 @@ export class UserCrudComponent implements OnInit {
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
         if(res){
-          this.closeDialog(true);
           this.loadData();
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
+          this.closeDialog(true);
         } else {
           this.commonService.toastrDanger("Không thể thêm người dùng này !!!");
           this.closeDialog(false);
