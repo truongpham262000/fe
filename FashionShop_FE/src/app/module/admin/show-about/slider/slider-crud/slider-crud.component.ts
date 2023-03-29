@@ -76,6 +76,7 @@ export class SliderCrudComponent implements OnInit {
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
         if(res === null){
+          this.loadData();
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.dialogRef.close(true);
         } else {
