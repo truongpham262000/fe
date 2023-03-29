@@ -51,20 +51,21 @@ export class AboutsCrudComponent  {
         if(res === null){
           this.loadData();
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(false);
+          this.dialogRef.close(true);
         } else {
           this.commonService.toastrDanger("Không thể thêm người dùng này !!!");
-          this.closeDialog(true);
+          this.dialogRef.close(false);
         }
       })
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
         if(res === null){
+          this.loadData()
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(false);
+          this.dialogRef.close(true);
         } else {
           this.commonService.toastrDanger("Không thể cập nhật bài viết !!!");
-          this.closeDialog(true);
+          this.dialogRef.close(false);
         }
       })
     }
