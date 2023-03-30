@@ -41,7 +41,7 @@ export class UserCrudComponent implements OnInit {
         this.target = res;
       } else {
         this.commonService.toastrDanger("Không tìm thấy dữ liệu !!!");
-        this.closeDialog(true)
+        this.dialogRef.close(true)
       }
     })
   }
@@ -49,24 +49,23 @@ export class UserCrudComponent implements OnInit {
   save(): void {
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
-        if(res){
-          this.loadData();
+        if(res === null){
+          this.dialogRef.close(true);        
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(true);
+          this.loadData();
         } else {
+          this.dialogRef.close(false);
           this.commonService.toastrDanger("Không thể thêm người dùng này !!!");
-          this.closeDialog(false);
         }
       })
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
-        console.log(res)
         if(res === null){
+          this.dialogRef.close(true);
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(true);
         } else {
+          this.dialogRef.close(false);
           this.commonService.toastrDanger("Không thể cập nhật bài viết !!!");
-          this.closeDialog(false);
         }
       })
     }

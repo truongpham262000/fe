@@ -36,7 +36,7 @@ export class RolesCrudComponent implements OnInit {
         this.target = res;
       } else {
         this.commonService.toastrDanger("Không tìm thấy dữ liệu !!!");
-        this.closeDialog(true)
+        this.dialogRef.close(true)
       }
     })
   }
@@ -44,24 +44,23 @@ export class RolesCrudComponent implements OnInit {
   save(): void {
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
-        if(res){
-          this.closeDialog(true);
-          this.loadData();
+        if(res === null){
+          this.dialogRef.close(true);
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
+          this.loadData();
         } else {
-          this.commonService.toastrDanger("Không thể thêm quyền này !!!");
-          this.closeDialog(false);
+          this.commonService.toastrDanger("Không thể thêm "+ this.title +" này !!!");
+          this.dialogRef.close(false);
         }
       })
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
-        console.log(res)
         if(res === null){
+          this.dialogRef.close(true);
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(true);
         } else {
-          this.commonService.toastrDanger("Không thể cập nhật quyền !!!");
-          this.closeDialog(false);
+          this.commonService.toastrDanger("Không thể cập nhật "+ this.title +" !!!");
+          this.dialogRef.close(false);
         }
       })
     }

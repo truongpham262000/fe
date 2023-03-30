@@ -411,7 +411,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -467,7 +467,7 @@ export class Client implements IClient {
             result200 = About.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -521,7 +521,7 @@ export class Client implements IClient {
             result200 = About.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -576,7 +576,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -626,7 +626,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -684,7 +684,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -740,7 +740,7 @@ export class Client implements IClient {
             result200 = CartItem.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -794,7 +794,7 @@ export class Client implements IClient {
             result200 = CartItem.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -849,7 +849,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -899,7 +899,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -957,7 +957,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1013,7 +1013,7 @@ export class Client implements IClient {
             result200 = Cart.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1067,7 +1067,7 @@ export class Client implements IClient {
             result200 = Cart.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1122,7 +1122,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1172,7 +1172,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1230,7 +1230,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1286,7 +1286,7 @@ export class Client implements IClient {
             result200 = Category.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1340,7 +1340,7 @@ export class Client implements IClient {
             result200 = Category.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1395,7 +1395,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1445,7 +1445,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1503,7 +1503,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1559,7 +1559,7 @@ export class Client implements IClient {
             result200 = Comment.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1613,7 +1613,7 @@ export class Client implements IClient {
             result200 = Comment.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1668,7 +1668,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1718,7 +1718,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1776,7 +1776,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1832,7 +1832,7 @@ export class Client implements IClient {
             result200 = Coupon.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1886,7 +1886,7 @@ export class Client implements IClient {
             result200 = Coupon.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1941,7 +1941,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -1991,7 +1991,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2049,7 +2049,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2105,7 +2105,7 @@ export class Client implements IClient {
             result200 = Favorite.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2159,7 +2159,7 @@ export class Client implements IClient {
             result200 = Favorite.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2214,7 +2214,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2264,7 +2264,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2322,7 +2322,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2378,7 +2378,7 @@ export class Client implements IClient {
             result200 = FeedBack.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2432,7 +2432,7 @@ export class Client implements IClient {
             result200 = FeedBack.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2487,7 +2487,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2537,7 +2537,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2595,7 +2595,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2651,7 +2651,7 @@ export class Client implements IClient {
             result200 = Payment.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2705,7 +2705,7 @@ export class Client implements IClient {
             result200 = Payment.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2760,7 +2760,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2810,7 +2810,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2868,7 +2868,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2924,7 +2924,7 @@ export class Client implements IClient {
             result200 = Product.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -2978,7 +2978,7 @@ export class Client implements IClient {
             result200 = Product.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3033,7 +3033,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3083,7 +3083,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3197,7 +3197,7 @@ export class Client implements IClient {
             result200 = Role.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3251,7 +3251,7 @@ export class Client implements IClient {
             result200 = Role.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3306,7 +3306,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3356,7 +3356,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3414,7 +3414,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3470,7 +3470,7 @@ export class Client implements IClient {
             result200 = Sale.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3524,7 +3524,7 @@ export class Client implements IClient {
             result200 = Sale.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3579,7 +3579,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3629,7 +3629,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3687,7 +3687,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3743,7 +3743,7 @@ export class Client implements IClient {
             result200 = SizeProduct.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3797,7 +3797,7 @@ export class Client implements IClient {
             result200 = SizeProduct.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3852,7 +3852,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3902,7 +3902,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -3960,7 +3960,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4016,7 +4016,7 @@ export class Client implements IClient {
             result200 = Slider.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4070,7 +4070,7 @@ export class Client implements IClient {
             result200 = Slider.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4125,7 +4125,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4175,7 +4175,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4233,7 +4233,7 @@ export class Client implements IClient {
             }
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4289,7 +4289,7 @@ export class Client implements IClient {
             result200 = User.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4343,7 +4343,7 @@ export class Client implements IClient {
             result200 = User.fromJS(resultData200);
             return _observableOf(result200);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4398,7 +4398,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
@@ -4448,7 +4448,7 @@ export class Client implements IClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(null as any);
             }));
-        } else if (status !== 200 && status !== 204) {
+        } else if (status !== 200 && status !== 204 && status !== 201) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));

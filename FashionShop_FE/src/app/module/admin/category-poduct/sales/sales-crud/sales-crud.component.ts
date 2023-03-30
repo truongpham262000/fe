@@ -44,7 +44,7 @@ export class SalesCrudComponent implements OnInit {
         this.target.endDate = this.target.endDate? new ConvertDatePipe().transform(this.target.endDate) : null;
       } else {
         this.commonService.toastrDanger("Không tìm thấy dữ liệu !!!");
-        this.closeDialog(true)
+        this.dialogRef.close(true)
       }
     })
   }
@@ -54,23 +54,23 @@ export class SalesCrudComponent implements OnInit {
     this.target.endDate = this.target.endDate ? new Date(this.target.endDate): null;
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
-        if(res){
+        if(res === null){
+          this.dialogRef.close(true);
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(true);
+          this.loadData()
         } else {
-          this.closeDialog(false);
+          this.dialogRef.close(false);
           this.commonService.toastrDanger("Không thể thêm "+ this.title +" !!!");
         }
       })
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
-        console.log(res)
         if(res === null){
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(true);
+          this.dialogRef.close(true);
         } else {
           this.commonService.toastrDanger("Không thể cập nhật "+ this.title +" !!!");
-          this.closeDialog(false);
+          this.dialogRef.close(false);
         }
       })
     }

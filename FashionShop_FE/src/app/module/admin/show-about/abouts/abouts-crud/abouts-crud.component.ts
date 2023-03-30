@@ -49,22 +49,22 @@ export class AboutsCrudComponent  {
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
         if(res === null){
-          this.loadData();
-          this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.dialogRef.close(true);
+          this.commonService.toastrSuccess(SUCCESS_NOTICE);
+          this.loadData();
         } else {
-          this.commonService.toastrDanger("Không thể thêm người dùng này !!!");
+          this.commonService.toastrDanger("Không thể thêm "+ this.title +" này !!!");
           this.dialogRef.close(false);
         }
       })
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
-        if(res === null){
+        if(res != null){
           this.loadData();
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.dialogRef.close(true);
         } else {
-          this.commonService.toastrDanger("Không thể cập nhật bài viết !!!");
+          this.commonService.toastrDanger("Không thể cập nhật "+ this.title +" !!!");
           this.dialogRef.close(false);
         }
       })

@@ -63,8 +63,9 @@ export class CartCrudComponent implements OnInit {
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
         if(res){
-          this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.dialogRef.close(true);
+          this.commonService.toastrSuccess(SUCCESS_NOTICE);
+          this.loadData();
         } else {
           this.dialogRef.close(false);
           this.commonService.toastrDanger("Không thể thêm "+ this.title +" này !!!");

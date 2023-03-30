@@ -64,10 +64,10 @@ export class SliderCrudComponent implements OnInit {
     this.target.createdDate = this.target.createdDate ? new Date(this.target.createdDate) : null;
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
-        if(res){
-          this.loadData();
-          this.commonService.toastrSuccess(SUCCESS_NOTICE);
+        if(res === null){
           this.dialogRef.close(true);
+          this.commonService.toastrSuccess(SUCCESS_NOTICE);
+          this.loadData();
         } else {
           this.commonService.toastrDanger("Không thể thêm "+ this.title +" này !!!");
           this.dialogRef.close(true);
@@ -76,7 +76,6 @@ export class SliderCrudComponent implements OnInit {
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
         if(res === null){
-          this.loadData();
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.dialogRef.close(true);
         } else {

@@ -38,7 +38,7 @@
               </td>
               <td class="align-middle">{{ item.title }}</td>
               <td class="align-middle">{{ item.description | slice: 0:250 }}</td>
-              <td class="text-center align-middle">{{ item.status === 1? 'Đang sử dụng':'Không sử dụng' }}</td>
+              <td class="text-center align-middle" [ngClass]="{'text-success': item.status, 'text-danger': item.status === 0}">{{ item.status === 1? 'Đang sử dụng':'Không sử dụng' }}</td>
               <td class="text-center align-middle">
                 <ngx-icon-info title="Xem chi tiết" style="cursor: pointer;" (click)="openDetailDialog(item.aboutId)"></ngx-icon-info>&nbsp;&nbsp;
                 <ngx-icon-edit title="Cập nhật" style="cursor: pointer;" (click)="openEditDialog(item.aboutId)"></ngx-icon-edit>&nbsp;&nbsp;

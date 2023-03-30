@@ -47,7 +47,7 @@ export class CartItemCrudComponent implements OnInit {
         this.target.createAt = this.target.createAt? new ConvertDatePipe().transform(this.target.createAt) : null;
       } else {
         this.commonService.toastrDanger("Không tìm thấy dữ liệu !!!");
-        this.closeDialog(true)
+        this.dialogRef.close(true);
       }
     })
   }
@@ -56,11 +56,12 @@ export class CartItemCrudComponent implements OnInit {
     this.target.createAt = this.target.createAt ? new Date(this.target.createAt): null;
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
-        if(res){
+        if(res === null){
+          this.dialogRef.close(true);
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(true);
+          this.loadData();
         } else {
-          this.closeDialog(false);
+          this.dialogRef.close(false);
           this.commonService.toastrDanger("Không thể thêm "+ this.title +" này !!!");
         }
       })
@@ -69,10 +70,10 @@ export class CartItemCrudComponent implements OnInit {
         console.log(res)
         if(res === null){
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
-          this.closeDialog(true);
+          this.dialogRef.close(true);
         } else {
           this.commonService.toastrDanger("Không thể cập nhật "+ this.title +" !!!");
-          this.closeDialog(false);
+          this.dialogRef.close(false);
         }
       })
     }

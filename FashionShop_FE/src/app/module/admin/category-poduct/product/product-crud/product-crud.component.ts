@@ -73,9 +73,10 @@ export class ProductCrudComponent implements OnInit  {
     this.target.createdDate = this.target.createdDate ? new Date(this.target.createdDate): null;
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
-        if(res){
-          this.commonService.toastrSuccess(SUCCESS_NOTICE);
+        if(res === null){
           this.dialogRef.close(true);
+          this.commonService.toastrSuccess(SUCCESS_NOTICE);
+          this.loadData();
         } else {
           this.dialogRef.close(false);
           this.commonService.toastrDanger("Không thể thêm "+ this.title +" này !!!");
