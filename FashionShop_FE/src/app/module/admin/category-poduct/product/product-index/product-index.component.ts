@@ -33,7 +33,7 @@ export class ProductIndexComponent  {
 
   openCreateDialog(){
     this.dialog.open(ProductCrudComponent,
-      this.commonService.configDialog("70%",{
+      this.commonService.configDialog("100%",{
         key: null,
         actionType: STATUS_ACTION.create
       })
@@ -48,7 +48,7 @@ export class ProductIndexComponent  {
 
   openDetailDialog(key: number){
     this.dialog.open(ProductCrudComponent,
-      this.commonService.configDialog("70%",{
+      this.commonService.configDialog("100%",{
         key: key,
         actionType: STATUS_ACTION.detail
       }))
@@ -58,7 +58,7 @@ export class ProductIndexComponent  {
 
   openEditDialog(key: number){
     this.dialog.open(ProductCrudComponent,
-      this.commonService.configDialog("70%",{
+      this.commonService.configDialog("100%",{
         key: key,
         actionType: STATUS_ACTION.edit
       }))

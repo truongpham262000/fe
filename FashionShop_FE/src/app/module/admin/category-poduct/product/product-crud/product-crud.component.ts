@@ -53,22 +53,6 @@ export class ProductCrudComponent implements OnInit  {
     })
   }
 
-  handleUpload(event: any){
-    const files = event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(files);
-    reader.onload = () => {
-      this.target.productImage = reader.result.toString();
-    };
-  }
-
-  @ViewChild('avatar') avatar: ElementRef;
-  DeleteImg(){
-    this.target.productImage = null;
-    let input = <HTMLInputElement>document.getElementById("loadImage");
-    input.value = null;
-  }
-
   save(): void {
     this.target.createdDate = this.target.createdDate ? new Date(this.target.createdDate): null;
     if(this.dataRef.actionType === STATUS_ACTION.create){
@@ -95,7 +79,21 @@ export class ProductCrudComponent implements OnInit  {
     }
   }
 
+  handleUpload(event: any){
+    const files = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(files);
+    reader.onload = () => {
+      this.target.productImage = reader.result.toString();
+    };
+  }
 
+  @ViewChild('avatar') avatar: ElementRef;
+  DeleteImg(){
+    this.target.productImage = null;
+    let input = <HTMLInputElement>document.getElementById("loadImage");
+    input.value = null;
+  }
 
   closeDialog(value?: boolean): void {
     this.dialogRef.close(value)
