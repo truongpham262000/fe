@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12" *ngIf="dataRef.actionType !== statusAction.detail">
                         <div class="input-group">
-                            <input type="file" class="form-control" id="loadimage" (change)="handleUpload($event)" />&nbsp;
+                            <input type="file" class="form-control" id="loadImage" (change)="handleUpload($event)" />&nbsp;
                             <div style="display: flex; justify-content: center; align-items: center;">
                                 <ngx-icon-delete title="Xóa ảnh" style="cursor: pointer;" (click)="DeleteImg()"></ngx-icon-delete>
                             </div>
@@ -43,7 +43,7 @@
                             <div class="form-group">
                                 <label class="control-label required">Mã sản phẩm</label>
                                 <input type="text" class="form-control" name="productCode"
-                                    [(ngModel)]="target.productCode" #productCode="ngModel" maxlength="200" required
+                                    [(ngModel)]="target.productCode" #productCode="ngModel" maxlength="10" required
                                     [disabled]="dataRef.actionType === statusAction.detail" />
                             </div>
                         </div>

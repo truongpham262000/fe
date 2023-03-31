@@ -83,7 +83,7 @@ export class ProductIndexComponent  {
       .afterClosed().subscribe((dialog) => {
         if(dialog){
           this._service.delete(key).subscribe((res) => {
-            if(res == null){
+            if(res === null){
               this.loadData();
               this.commonService.toastrSuccess();
             } else {
