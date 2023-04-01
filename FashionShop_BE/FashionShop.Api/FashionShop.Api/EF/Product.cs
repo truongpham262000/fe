@@ -33,7 +33,7 @@ public partial class Product
 
     public string? CreatedBy { get; set; }
 
-    public int CategoryId { get; set; }
+    public int? CategoryId { get; set; }
 
     public string? MetaKeywords { get; set; }
 
@@ -45,7 +45,7 @@ public partial class Product
 
     public virtual ICollection<CartItem> CartItems { get; } = new List<CartItem>();
 
-    public virtual Category Category { get; set; } = null!;
+    public virtual Category? Category { get; set; }
 
     public virtual ICollection<Comment> Comments { get; } = new List<Comment>();
 

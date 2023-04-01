@@ -61,7 +61,7 @@ public partial class FashionShopDbContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.Description).HasMaxLength(500);
             entity.Property(e => e.Detail).HasColumnType("ntext");
-            entity.Property(e => e.Image).HasColumnType("ntext");
+            entity.Property(e => e.Image).IsUnicode(false);
             entity.Property(e => e.MetaDescriptions).HasMaxLength(500);
             entity.Property(e => e.MetaKeywords).HasMaxLength(250);
             entity.Property(e => e.MetaTitle).HasMaxLength(250);
@@ -224,14 +224,14 @@ public partial class FashionShopDbContext : DbContext
             entity.Property(e => e.MetaDescriptions).HasMaxLength(500);
             entity.Property(e => e.MetaKeywords).HasMaxLength(250);
             entity.Property(e => e.MetaTitle).HasMaxLength(250);
-            entity.Property(e => e.MoreImages).HasColumnType("ntext");
+            entity.Property(e => e.MoreImages).IsUnicode(false);
             entity.Property(e => e.Price)
                 .HasDefaultValueSql("((0))")
                 .HasColumnType("decimal(18, 0)");
             entity.Property(e => e.ProductCode)
                 .HasMaxLength(10)
                 .IsUnicode(false);
-            entity.Property(e => e.ProductImage).HasColumnType("ntext");
+            entity.Property(e => e.ProductImage).IsUnicode(false);
             entity.Property(e => e.ProductName).HasMaxLength(250);
             entity.Property(e => e.Quantity).HasDefaultValueSql("((0))");
             entity.Property(e => e.SizeId).HasColumnName("SizeID");
@@ -239,7 +239,6 @@ public partial class FashionShopDbContext : DbContext
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Product_Category");
 
             entity.HasOne(d => d.Size).WithMany(p => p.Products)
@@ -292,7 +291,7 @@ public partial class FashionShopDbContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.Description).HasMaxLength(500);
-            entity.Property(e => e.Image).HasColumnType("ntext");
+            entity.Property(e => e.Image).IsUnicode(false);
             entity.Property(e => e.Link).HasMaxLength(500);
             entity.Property(e => e.Status).HasDefaultValueSql("((1))");
         });

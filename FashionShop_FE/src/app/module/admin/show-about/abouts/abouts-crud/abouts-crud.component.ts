@@ -1,5 +1,5 @@
 import { STATUS_ACTION, SUCCESS_NOTICE } from './../../../../../@core/customs/constants';
-import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommonService, ConvertDatePipe } from '../../../../../@core/customs/common.service';
 import { AboutsService } from '../abouts.service';
@@ -10,7 +10,7 @@ import { About } from '../../../../../@core/data/FashionShopApi.service';
   templateUrl: './abouts-crud.component.html',
   styleUrls: ['./abouts-crud.component.scss']
 })
-export class AboutsCrudComponent  {
+export class AboutsCrudComponent implements OnInit {
 
   constructor(
     private commonService: CommonService,

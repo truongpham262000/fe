@@ -29,6 +29,8 @@ export class ProductCrudComponent implements OnInit  {
   ngOnInit(): void {
     if(this.dataRef.actionType !== this.statusAction.create){
       this.loadData();
+    } else {
+      this.target.moreImages = null;
     }
     
     this._service.selectSizeID().subscribe(res => {
