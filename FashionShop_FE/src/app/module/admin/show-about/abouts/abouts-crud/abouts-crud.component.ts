@@ -20,7 +20,7 @@ export class AboutsCrudComponent implements OnInit {
   ) { }
 
   statusAction = STATUS_ACTION;
-  title: string = 'bài viết';
+  title: string = "bài viết";
   target: About = new About();
   listStatus: Object[] = [{text: "Đang sử dụng",value: 1},{text: "Không sử dụng", value: 0}]
 

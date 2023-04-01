@@ -49,20 +49,19 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
                         <div class="form-group">
-                            <label class="control-label">Trạng thái </label>
+                            <label class="control-label required">Trạng thái </label>
                             <ng-select [items]="listStatus" bindLabel="text" bindValue="value"
                                 [(ngModel)]="target.status" #status="ngModel" name="status"
-                                [disabled]="dataRef.actionType === statusAction.detail">
+                                [disabled]="dataRef.actionType === statusAction.detail" required>
                             </ng-select>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
                         <div class="form-group">
-                            <label class="control-label">Đường dẫn ảnh</label>
-                            <input type="text" class="form-control" name="link"
-                                [(ngModel)]="target.link"
-                                #link="ngModel"
-                                [disabled]="dataRef.actionType === statusAction.detail"/>
+                            <label class="control-label required">Đường dẫn ảnh</label>
+                            <input type="url" class="form-control" name="link"
+                                [(ngModel)]="target.link" #link="ngModel"
+                                [disabled]="dataRef.actionType === statusAction.detail" required/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
