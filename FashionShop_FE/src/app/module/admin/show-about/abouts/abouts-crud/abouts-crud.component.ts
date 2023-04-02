@@ -20,7 +20,7 @@ export class AboutsCrudComponent implements OnInit {
   ) { }
 
   statusAction = STATUS_ACTION;
-  title: string = "bài viết";
+  titleAbout: string = "bài viết";
   target: About = new About();
   listStatus: Object[] = [{text: "Đang sử dụng",value: 1},{text: "Không sử dụng", value: 0}]
 
@@ -53,7 +53,7 @@ export class AboutsCrudComponent implements OnInit {
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.loadData();
         } else {
-          this.commonService.toastrDanger("Không thể thêm "+ this.title +" này !!!");
+          this.commonService.toastrDanger("Không thể thêm "+ this.titleAbout +" này !!!");
           this.dialogRef.close(false);
         }
       })
@@ -64,7 +64,7 @@ export class AboutsCrudComponent implements OnInit {
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.dialogRef.close(true);
         } else {
-          this.commonService.toastrDanger("Không thể cập nhật "+ this.title +" !!!");
+          this.commonService.toastrDanger("Không thể cập nhật "+ this.titleAbout +" !!!");
           this.dialogRef.close(false);
         }
       })
