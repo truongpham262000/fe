@@ -22,6 +22,7 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import { ModuleModule } from './module/module.module';
+import { ClientModule } from './client/client.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,7 +43,8 @@ import { ModuleModule } from './module/module.module';
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
     ModuleModule,
-    NbCardModule
+    NbCardModule,
+    ClientModule
   ],
   bootstrap: [AppComponent],
 })

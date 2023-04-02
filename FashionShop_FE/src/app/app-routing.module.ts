@@ -4,6 +4,11 @@ import { NgModule } from '@angular/core';
 export const routes: Routes = [
   {
     path: '',
+    loadChildren: () => import('./client/client.module')
+      .then(m => m.ClientModule),
+  },
+  {
+    path: 'admin',
     loadChildren: () => import('./module/module.module')
       .then(m => m.ModuleModule),
   },
