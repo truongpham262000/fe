@@ -12,6 +12,8 @@ import { SliderService } from '../slider.service';
   styleUrls: ['./slider-index.component.scss']
 })
 export class SliderIndexComponent  {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

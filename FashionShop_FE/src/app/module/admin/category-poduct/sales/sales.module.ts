@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgModule } from '@angular/core';
 import { SalesIndexComponent } from './sales-index/sales-index.component';
 import { SalesCrudComponent } from './sales-crud/sales-crud.component';
@@ -17,7 +19,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FormsModule,
     ThemeModule,
     NbCardModule,
-    NgSelectModule
+    NgSelectModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class SalesModule { }

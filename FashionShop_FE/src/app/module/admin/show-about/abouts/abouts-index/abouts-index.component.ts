@@ -12,6 +12,8 @@ import { DialogConfirmComponent } from '../../../../../@theme/components/templat
   styleUrls: ['./abouts-index.component.scss']
 })
 export class AboutsIndexComponent  {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

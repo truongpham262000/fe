@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NbCardModule } from '@nebular/theme';
 import { NgModule } from '@angular/core';
@@ -17,7 +19,9 @@ import { ThemeModule } from '../../../../@theme/theme.module';
     NbCardModule,
     FormsModule,
     ThemeModule,
-    NgSelectModule
+    NgSelectModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class FavoritesModule { }

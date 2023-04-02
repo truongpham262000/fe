@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserIndexComponent } from './user-index/user-index.component';
@@ -21,7 +23,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FormsModule,
     ThemeModule,
     NbCardModule,
-    NgSelectModule
+    NgSelectModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class UserModule { }

@@ -12,6 +12,8 @@ import { CommentsService } from '../comments.service';
   styleUrls: ['./comments-index.component.scss']
 })
 export class CommentsIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

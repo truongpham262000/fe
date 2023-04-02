@@ -44,7 +44,7 @@ import { ClientModule } from './client/client.module';
     ThemeModule.forRoot(),
     ModuleModule,
     NbCardModule,
-    ClientModule
+    ClientModule,
   ],
   bootstrap: [AppComponent],
 })

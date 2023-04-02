@@ -43,7 +43,7 @@ export class SizeProductCrudComponent implements OnInit {
   save(): void {
     if(this.dataRef.actionType === STATUS_ACTION.create){
       this._service.insert(this.target).subscribe((res) => {
-        if(res){
+        if(res === null){
           this.dialogRef.close(true);
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.loadData();
@@ -54,7 +54,6 @@ export class SizeProductCrudComponent implements OnInit {
       })
     } else {
       this._service.update(this.dataRef.key,this.target).subscribe((res) => {
-        console.log(res)
         if(res === null){
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.dialogRef.close(true);

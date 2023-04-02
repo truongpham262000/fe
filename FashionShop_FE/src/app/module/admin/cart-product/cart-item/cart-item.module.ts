@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgModule } from '@angular/core';
 import { CartItemIndexComponent } from './cart-item-index/cart-item-index.component';
 import { CartItemCrudComponent } from './cart-item-crud/cart-item-crud.component';
@@ -17,7 +19,9 @@ import { ThemeModule } from '../../../../@theme/theme.module';
     FormsModule,
     NgSelectModule,
     NbCardModule,
-    ThemeModule
+    ThemeModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class CartItemModule { }

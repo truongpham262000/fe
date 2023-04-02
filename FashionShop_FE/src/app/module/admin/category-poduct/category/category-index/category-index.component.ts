@@ -12,6 +12,8 @@ import { CategoryService } from '../category.service';
   styleUrls: ['./category-index.component.scss']
 })
 export class CategoryIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

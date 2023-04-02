@@ -12,6 +12,8 @@ import { SizeProductService } from '../size-product.service';
   styleUrls: ['./size-product-index.component.scss']
 })
 export class SizeProductIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

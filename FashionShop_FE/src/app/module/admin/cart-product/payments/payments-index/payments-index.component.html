@@ -11,7 +11,7 @@
         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
           <div class="input-group">
             <ngx-btn-add data-toggle="tooltip" title="Thêm mới" (click)="openCreateDialog()"></ngx-btn-add>&nbsp;&nbsp;
-            <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
             <ngx-btn-search></ngx-btn-search>
           </div>
         </div>
@@ -29,7 +29,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of target;let i = index">
+              <tr *ngFor="let item of target| filter: searchText| paginate: { itemsPerPage: 10, currentPage: p };let i = index">
                 <td class="text-center align-middle">{{ i + 1 }}</td>
                 <td class="align-middle">{{ item.paymentId }}</td>
                 <td class="align-middle">{{ item.paymentName }}</td>
@@ -48,8 +48,7 @@
       <div class="row text-center">
         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
             <div style="float: right;">
-                <ngx-pagination>
-                </ngx-pagination>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
     </div>

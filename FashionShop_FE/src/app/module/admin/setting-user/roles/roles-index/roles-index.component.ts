@@ -12,6 +12,8 @@ import { RolesService } from '../roles.service';
   styleUrls: ['./roles-index.component.scss']
 })
 export class RolesIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

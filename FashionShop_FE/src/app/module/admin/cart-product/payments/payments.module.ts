@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgModule } from '@angular/core';
 import { PaymentsIndexComponent } from './payments-index/payments-index.component';
 import { PaymentsCrudComponent } from './payments-crud/payments-crud.component';
@@ -15,7 +17,9 @@ import { ThemeModule } from '../../../../@theme/theme.module';
     PaymentsRoutingModule,
     FormsModule,
     NbCardModule,
-    ThemeModule
+    ThemeModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class PaymentsModule { }

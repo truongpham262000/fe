@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgModule } from '@angular/core';
 import { CommentsIndexComponent } from './comments-index/comments-index.component';
@@ -21,7 +23,9 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     NbCardModule,
     NgSelectModule,
-    ThemeModule
+    ThemeModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class CommentsModule { }

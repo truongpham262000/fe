@@ -12,6 +12,8 @@ import { SalesService } from '../sales.service';
   styleUrls: ['./sales-index.component.scss']
 })
 export class SalesIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

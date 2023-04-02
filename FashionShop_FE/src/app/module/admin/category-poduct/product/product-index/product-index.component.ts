@@ -12,6 +12,8 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-index.component.scss']
 })
 export class ProductIndexComponent  {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

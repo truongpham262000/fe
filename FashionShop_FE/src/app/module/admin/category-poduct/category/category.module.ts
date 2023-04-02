@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgModule } from '@angular/core';
 import { CategoryIndexComponent } from './category-index/category-index.component';
@@ -17,7 +19,9 @@ import { ThemeModule } from '../../../../@theme/theme.module';
     FormsModule,
     NbCardModule,
     ThemeModule,
-    NgSelectModule
+    NgSelectModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class CategoryModule { }

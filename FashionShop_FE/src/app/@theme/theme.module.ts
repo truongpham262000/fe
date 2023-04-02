@@ -79,6 +79,8 @@ import { IconMinimizeComponent } from './components/template/icon/minimize/icon-
 import { MdPaginationComponent } from './components/pagination/pagination.component';
 import { DialogConfirmComponent } from './components/template/dialog/dialog-confirm/dialog-confirm.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderClientComponent } from './components/header-client/header-client.component';
+import { FooterClientComponent } from './components/footer-client/footer-client.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -99,6 +101,8 @@ const NB_MODULES = [
 const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
+  HeaderClientComponent,
+  FooterClientComponent,
   SearchInputComponent,
   TinyMCEComponent,
   OneColumnLayoutComponent,

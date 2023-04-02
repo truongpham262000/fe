@@ -11,7 +11,7 @@
         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
           <div class="input-group">
             <ngx-btn-add data-toggle="tooltip" title="Thêm mới" (click)="openCreateDialog()"></ngx-btn-add>&nbsp;&nbsp;
-            <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
             <ngx-btn-search></ngx-btn-search>
           </div>
         </div>
@@ -32,7 +32,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of target;let i = index">
+              <tr *ngFor="let item of target | filter: searchText| paginate: { itemsPerPage: 10, currentPage: p };let i = index">
                 <td class="text-center align-middle">{{ i + 1 }}</td>
                 <td class="align-middle">
                   <img [src]="item.image" width="100px" height="100px" alt="No image...">
@@ -56,13 +56,12 @@
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
             <div style="float: left;">
-                Tổng số bản ghi:
+                Tổng số bản ghi: {{ target?.length }}
             </div>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8">
             <div style="float: right;">
-                <ngx-pagination>
-                </ngx-pagination>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
       </div>

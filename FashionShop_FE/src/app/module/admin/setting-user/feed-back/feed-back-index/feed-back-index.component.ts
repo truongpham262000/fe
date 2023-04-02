@@ -12,6 +12,8 @@ import { FeedBackService } from '../feed-back.service';
   styleUrls: ['./feed-back-index.component.scss']
 })
 export class FeedBackIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

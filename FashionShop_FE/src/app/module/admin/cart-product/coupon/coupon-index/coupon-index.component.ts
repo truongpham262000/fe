@@ -12,6 +12,8 @@ import { CouponService } from '../coupon.service';
   styleUrls: ['./coupon-index.component.scss']
 })
 export class CouponIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

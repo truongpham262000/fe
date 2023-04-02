@@ -11,7 +11,7 @@
         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
           <div class="input-group">
             <ngx-btn-add data-toggle="tooltip" title="Thêm mới" (click)="openCreateDialog()"></ngx-btn-add>&nbsp;&nbsp;
-            <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
             <ngx-btn-search></ngx-btn-search>
           </div>
         </div>
@@ -24,26 +24,20 @@
               <tr>
                 <th class="text-center align-middle" style="width: 50px;">STT</th>
                 <th class="text-center align-middle" style="min-width: 100px;">Ảnh sản phẩm</th>
-                <th class="text-center align-middle" style="min-width: 100px;">Mã sản phẩm</th>
                 <th class="text-center align-middle" style="min-width: 150px;">Tên sản phẩm</th>
                 <th class="text-center align-middle" style="min-width: 100px;">Giá sản phẩm</th>
-                <th class="text-center align-middle" style="min-width: 150px;">Số lượng</th>
-                <th class="text-center align-middle" style="min-width: 150px;">Mô tả</th>
                 <th class="text-center align-middle" style="min-width: 100px;">Trạng thái</th>
                 <th class="text-center align-middle" style="min-width: 100px;">Hành động</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of target;let i = index">
+              <tr *ngFor="let item of target| filter: searchText| paginate: { itemsPerPage: 10, currentPage: p };let i = index">
                 <td class="text-center align-middle">{{ i + 1 }}</td>
                 <td class="align-middle">
                     <img [src]="item.productImage" alt="No image..." height="100px">
                 </td>
-                <td class="align-middle">{{ item.productCode }}</td>
                 <td class="align-middle">{{ item.productName }}</td>
                 <td class="align-middle">{{ item.price }}</td>
-                <td class="align-middle">{{ item.quantity }}</td>
-                <td class="align-middle">{{ item.description | slice: 0:21 }}</td>
                 <td class="align-middle text-center" 
                     [ngClass]="{'text-success': item.status,'text-danger': item.status===0}">
                     {{ item.status === 1? 'Còn hàng':'Hết hàng' }}
@@ -63,13 +57,12 @@
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
             <div style="float: left;">
-                Tổng số bản ghi:
+                Tổng số bản ghi: {{ target?.length }}
             </div>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8">
             <div style="float: right;">
-                <ngx-pagination>
-                </ngx-pagination>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
     </div>

@@ -12,6 +12,8 @@ import { FavoritesService } from '../favorites.service';
   styleUrls: ['./favorites-index.component.scss']
 })
 export class FavoritesIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

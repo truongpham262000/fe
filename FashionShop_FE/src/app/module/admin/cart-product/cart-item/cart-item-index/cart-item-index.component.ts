@@ -12,6 +12,8 @@ import { CartItemService } from '../cart-item.service';
   styleUrls: ['./cart-item-index.component.scss']
 })
 export class CartItemIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

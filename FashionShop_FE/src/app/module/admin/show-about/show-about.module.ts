@@ -15,7 +15,7 @@ import { ThemeModule } from '../../../@theme/theme.module';
     SliderModule,
     FormsModule,
     NbCardModule,
-    ThemeModule
+    ThemeModule,
   ]
 })
 export class ShowAboutModule { }

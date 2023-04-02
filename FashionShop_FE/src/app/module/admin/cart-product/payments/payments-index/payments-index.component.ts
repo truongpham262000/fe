@@ -12,6 +12,8 @@ import { PaymentsService } from '../payments.service';
   styleUrls: ['./payments-index.component.scss']
 })
 export class PaymentsIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

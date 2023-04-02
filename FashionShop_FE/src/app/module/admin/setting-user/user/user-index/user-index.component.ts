@@ -12,6 +12,8 @@ import { UserCrudComponent } from '../user-crud/user-crud.component';
   styleUrls: ['./user-index.component.scss']
 })
 export class UserIndexComponent implements OnInit {
+  searchText;
+  p;
 
   constructor(
     private dialog: MatDialog,

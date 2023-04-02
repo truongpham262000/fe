@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NbCardModule } from '@nebular/theme';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,7 +19,9 @@ import { ThemeModule } from '../../../../@theme/theme.module';
     RolesRoutingModule,
     NbCardModule,
     FormsModule,
-    ThemeModule
+    ThemeModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class RolesModule { }

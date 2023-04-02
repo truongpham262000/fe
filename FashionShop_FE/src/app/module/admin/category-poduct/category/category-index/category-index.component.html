@@ -11,7 +11,7 @@
         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
           <div class="input-group">
             <ngx-btn-add data-toggle="tooltip" title="Thêm mới" (click)="openCreateDialog()"></ngx-btn-add>&nbsp;&nbsp;
-            <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
             <ngx-btn-search></ngx-btn-search>
           </div>
         </div>
@@ -28,20 +28,18 @@
                 <th class="text-center align-middle" style="min-width: 150px;">Tiêu đề seo</th>
                 <th class="text-center align-middle" style="min-width: 150px;">Người tạo</th>
                 <th class="text-center align-middle" style="min-width: 150px;">Ngày tạo</th>
-                <th class="text-center align-middle" style="min-width: 150px;">Từ khóa</th>
                 <th class="text-center align-middle" style="min-width: 100px;">Trạng thái</th>
                 <th class="text-center align-middle" style="min-width: 100px;">Hành động</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of target;let i = index">
+              <tr *ngFor="let item of target| filter: searchText| paginate: { itemsPerPage: 10, currentPage: p };let i = index">
                 <td class="text-center align-middle">{{ i + 1 }}</td>
                 <td class="align-middle">{{ item.name }}</td>
                 <td class="align-middle">{{ item.metaTitle }}</td>
                 <td class="align-middle">{{ item.seoTitle }}</td>
                 <td class="align-middle">{{ item.createdBy }}</td>
                 <td class="align-middle">{{ item.createdDate | date: 'dd/MM/yyyy' }}</td>
-                <td class="align-middle">{{ item.metaKeywords }}</td>
                 <td class="align-middle text-center" 
                     [ngClass]="{'text-success': item.status,'text-danger': item.status===0}">
                     {{ item.status === 1? 'Còn hàng':'Hết hàng' }}
@@ -61,13 +59,12 @@
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
             <div style="float: left;">
-                Tổng số bản ghi:
+                Tổng số bản ghi: {{ target?.length }}
             </div>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8">
             <div style="float: right;">
-                <ngx-pagination>
-                </ngx-pagination>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
     </div>
