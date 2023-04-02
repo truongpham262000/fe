@@ -125,7 +125,7 @@
         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 text-right">
           <ngx-btn-submit [disabled]="frm.invalid"
             *ngIf="dataRef.actionType !== statusAction.detail"></ngx-btn-submit>&nbsp;&nbsp;
-          <ngx-btn-close mat-dialog-close></ngx-btn-close>
+          <ngx-btn-close (click)="closeDialog(true)"></ngx-btn-close>
         </div>
       </div>
     </nb-card-footer>

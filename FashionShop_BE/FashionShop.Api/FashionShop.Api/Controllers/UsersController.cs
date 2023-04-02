@@ -21,6 +21,43 @@ namespace FashionShop.Api.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        [Route("LogInUser")]
+        public async Task<ActionResult> Login(string userName,string password)
+        {
+            try
+            {
+                if(userName == null || password == null)
+                {
+                    return BadRequest("Bạn chưa nhập tài khoản hoặc mật khẩu");
+                } else
+                {
+                    var user = _context.Users.Where(x => x.Password == password).ToList();
+                    if (user.Count() == 0)
+                    {
+                        return BadRequest("Tài khoản hoặc mật khẩu không chính xác");
+                    } else
+                    {
+                        foreach(var item in user)
+                        {
+                            if(item.UserName == userName)
+                            {
+                                return Ok(item);
+                            } else
+                            {
+                                return BadRequest("Tài khoản không chính xác");
+                            }
+                        }
+                    }
+                }
+                return Ok();
+            } catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
         // GET: api/Users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
