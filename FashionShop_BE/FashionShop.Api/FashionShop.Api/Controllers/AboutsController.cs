@@ -51,7 +51,7 @@ namespace FashionShop.Api.Controllers
         }
 
         // PUT: api/Abouts/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // To protect from overposting attacks
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAbout(int id, About about)
         {
@@ -82,7 +82,7 @@ namespace FashionShop.Api.Controllers
         }
 
         // POST: api/Abouts
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // To protect from overposting attacks
         [HttpPost]
         public async Task<ActionResult<About>> PostAbout(About about)
         {
