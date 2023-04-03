@@ -4,6 +4,7 @@ import { ThemeModule } from '../@theme/theme.module';
 import { ClientRoutingModule } from './client-routing.module';
 import { NbCardModule } from '@nebular/theme';
 import { ClientComponent } from './client.component';
+import { BodyClientModule } from './body-client/body-client.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ClientComponent } from './client.component';
     ThemeModule,
     ClientRoutingModule,
     NbCardModule,
+    BodyClientModule
   ]
 })
 export class ClientModule { }
