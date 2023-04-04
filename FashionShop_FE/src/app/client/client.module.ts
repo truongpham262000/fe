@@ -5,10 +5,12 @@ import { ClientRoutingModule } from './client-routing.module';
 import { NbCardModule, NbListModule, NbTableModule, NbTabsetModule } from '@nebular/theme';
 import { ClientComponent } from './client.component';
 import { BodyClientModule } from './body-client/body-client.module';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     ClientComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,

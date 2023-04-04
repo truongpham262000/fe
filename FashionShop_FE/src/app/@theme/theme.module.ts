@@ -81,6 +81,7 @@ import { DialogConfirmComponent } from './components/template/dialog/dialog-conf
 import { FormsModule } from '@angular/forms';
 import { HeaderClientComponent } from './components/header-client/header-client.component';
 import { FooterClientComponent } from './components/footer-client/footer-client.component';
+import { RouterModule } from '@angular/router';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -157,7 +158,7 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES],
+  imports: [RouterModule,CommonModule, ...NB_MODULES],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
   declarations: [...COMPONENTS, ...PIPES],
 })
