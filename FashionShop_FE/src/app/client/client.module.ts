@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeModule } from '../@theme/theme.module';
 import { ClientRoutingModule } from './client-routing.module';
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbListModule, NbTableModule, NbTabsetModule } from '@nebular/theme';
 import { ClientComponent } from './client.component';
 import { BodyClientModule } from './body-client/body-client.module';
 
@@ -15,7 +15,10 @@ import { BodyClientModule } from './body-client/body-client.module';
     ThemeModule,
     ClientRoutingModule,
     NbCardModule,
-    BodyClientModule
+    NbListModule,
+    NbTableModule,
+    NbTabsetModule,
+    BodyClientModule,
   ]
 })
 export class ClientModule { }
