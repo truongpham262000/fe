@@ -6,11 +6,15 @@ import { NbCardModule, NbListModule, NbTableModule, NbTabsetModule } from '@nebu
 import { ClientComponent } from './client.component';
 import { BodyClientModule } from './body-client/body-client.module';
 import { ContactComponent } from './contact/contact.component';
+import { CategoryProductComponent } from './category-product/category-product.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
     ClientComponent,
     ContactComponent,
+    CategoryProductComponent,
+    FavoritesComponent,
   ],
   imports: [
     CommonModule,

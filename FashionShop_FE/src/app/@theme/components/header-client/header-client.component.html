@@ -1,6 +1,58 @@
 <header class="header trans_300">
     <!-- Main Navigation -->
-
+    <div class="top_nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="top_nav_left">Miễn phí vận chuyển cho sản phẩm đầu tiên</div>
+                </div>
+                <div class="col-md-7 text-right">
+                    <div class="top_nav_right">
+                        <ul class="top_nav_menu">
+                            <!-- Currency / Language / My Account -->
+                            <li class="currency">
+                                <a href="#">
+                                    Loại tiền
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="currency_selection">
+                                    <li><a href="#">VND</a></li>
+                                    <li><a href="#">USD</a></li>
+                                    <li><a href="#">Euro</a></li>
+                                </ul>
+                            </li>
+                            <li class="language">
+                                <a href="#">
+                                    Ngôn ngữ
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="language_selection">
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">VietNamese</a></li>
+                                </ul>
+                            </li>
+                            <li class="account nav-item dropdown">
+                                <a href="#"class="nav-link dropdown-toggle"
+                                    href="#"
+                                    id="navbarDropdownMenuLink"
+                                    role="button"
+                                    data-mdb-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Tài khoản
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li class="dropdown-item"><a href="#"><i class="fa-light fa-right-to-bracket"></i> Đăng nhập</a></li>
+                                    <li class="dropdown-item"><a href="#"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Đăng ký</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="main_nav_container">
         <div class="container">
             <div class="row">
@@ -11,14 +63,12 @@
                     <nav class="navbar">
                         <ul class="navbar_menu">
                             <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#">Cửa hàng</a></li>
-                            <li><a href="#">Sản phẩm yêu thích</a></li>
-                            <li><a href="#">Cửa hàng</a></li>
-                            <li><a href="#">Bài viết</a></li>
-                            <li><a href="/contact">Liên hệ</a></li>
+                            <li><a href="product" >Cửa hàng</a></li>
+                            <li><a href="favorites">Sản phẩm yêu thích</a></li>
+                            <li><a href="about" routerLinkActive="text-danger">Bài viết</a></li>
+                            <li><a href="contact" >Liên hệ</a></li>
                         </ul>
                         <ul class="navbar_user">
-                            <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                             <li class="checkout">
                                 <a href="#">

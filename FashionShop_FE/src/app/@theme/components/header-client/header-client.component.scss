@@ -9,3 +9,15 @@
 .main_nav_container{
     box-shadow: unset;
 }
+
+ol, ul {
+    padding-left: 0 !important;
+}
+
+.currency_selection, .language_selection, .account_selection{
+    z-index: 999;
+}
+
+.account_selection li{
+    width: 100%;
+}
