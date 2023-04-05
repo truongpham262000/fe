@@ -8,6 +8,7 @@ import { BodyClientDealOnWeakComponent } from './body-client-deal-on-weak/body-c
 import { BodyClientBestSellerComponent } from './body-client-best-seller/body-client-best-seller.component';
 import { BodyClientServiceComponent } from './body-client-service/body-client-service.component';
 import { BodyClientLastestBlogsComponent } from './body-client-lastest-blogs/body-client-lastest-blogs.component';
+import { ThemeModule } from '../../@theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BodyClientLastestBlogsComponent } from './body-client-lastest-blogs/bod
   ],
   imports: [
     CommonModule,
+    ThemeModule
   ]
 })
 export class BodyClientModule { }
