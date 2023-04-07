@@ -2,7 +2,7 @@
     <nb-card-header class="nb-card-header">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
-          <h6 class="title-header" style="text-transform: uppercase;">Chi tiết sản phẩm</h6>
+          <h6 class="title-header" style="text-transform: uppercase;">Chi tiết giỏ hàng</h6>
         </div>
       </div>
     </nb-card-header>
@@ -38,9 +38,9 @@
                 <td class="text-center align-middle">{{ i + 1 }}</td>
                 <td class="align-middle">{{ item.productId }}</td>
                 <td class="align-middle">{{ item.cartId }}</td>
-                <td class="align-middle">{{ item.price }}</td>
-                <td class="align-middle">{{ item.discount }}</td>
-                <td class="align-middle">{{ item.quantity }}</td>
+                <td class="align-middle">{{ item.price | number: '1.0-0'}}</td>
+                <td class="align-middle">{{ item.discount | number: '1.0-0' }}</td>
+                <td class="align-middle">{{ item.quantity | number: '1.0-0'}}</td>
                 <td class="align-middle">{{ item.createAt | date: 'dd/MM/yyyy' }}</td>
                 <td class="align-middle">{{ item.content }}</td>
                 <td class="text-center align-middle">

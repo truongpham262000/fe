@@ -42,9 +42,9 @@
             </div>
             <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
               <div class="form-group">
-                <label class="control-label required">Mô tả tiêu đề</label>
+                <label class="control-label">Mô tả tiêu đề</label>
                 <input type="text" class="form-control" name="metaTitle"
-                  [(ngModel)]="target.metaTitle" #metaTitle="ngModel" maxlength="200" required
+                  [(ngModel)]="target.metaTitle" #metaTitle="ngModel" maxlength="200"
                   [disabled]="dataRef.actionType === statusAction.detail" required/>
               </div>
             </div>
@@ -61,11 +61,11 @@
             </div>
             <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
               <div class="form-group">
-                <label class="control-label required">Chi tiết</label>
+                <label class="control-label">Chi tiết</label>
                 <input type="text" class="form-control" name="detail"
                   [(ngModel)]="target.detail"
                   #detail="ngModel" maxlength="200"
-                  [disabled]="dataRef.actionType === statusAction.detail" required/>
+                  [disabled]="dataRef.actionType === statusAction.detail"/>
               </div>
             </div>
           </div>
@@ -92,28 +92,28 @@
           <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 d-flex p-0">
             <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
               <div class="form-group">
-                <label class="control-label required">Từ khóa </label>
+                <label class="control-label">Từ khóa </label>
                 <input type="text" class="form-control" name="metaKeywords"
                   [(ngModel)]="target.metaKeywords"
                   #metaKeywords="ngModel" maxlength="200"
-                  [disabled]="dataRef.actionType === statusAction.detail" required/>
+                  [disabled]="dataRef.actionType === statusAction.detail"/>
               </div>
             </div>
             <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
               <div class="form-group">
-                <label class="control-label required">Mô tả từ khóa</label>
+                <label class="control-label">Mô tả từ khóa</label>
                 <input type="text" class="form-control" name="metaKeywords"
                   [(ngModel)]="target.metaDescriptions"
                   #metaKeywords="ngModel" maxlength="200"
-                  [disabled]="dataRef.actionType === statusAction.detail" required/>
+                  [disabled]="dataRef.actionType === statusAction.detail"/>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
             <div class="form-group">
-              <label class="control-label required">Mô tả</label>
+              <label class="control-label">Mô tả</label>
               <input type="text" class="form-control" name="description"
-                [(ngModel)]="target.description" #description="ngModel" maxlength="200"
+                [(ngModel)]="target.description" #description="ngModel" maxlength="500"
                 [disabled]="dataRef.actionType === statusAction.detail" required/>
             </div>
           </div>

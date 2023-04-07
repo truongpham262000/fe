@@ -23,7 +23,7 @@
             <thead>
               <tr>
                 <th class="text-center align-middle" style="width: 50px;">STT</th>
-                <th class="text-center align-middle" style="min-width: 100px;">Ảnh</th>
+                <th class="text-center align-middle" style="min-width: 200px;">Ảnh</th>
                 <th class="text-center align-middle" style="min-width: 250px;">Mô tả</th>
                 <th class="text-center align-middle" style="min-width: 100px;">Ngày tạo</th>
                 <th class="text-center align-middle" style="min-width: 100px;">Người tạo</th>
@@ -35,7 +35,7 @@
               <tr *ngFor="let item of target | filter: searchText| paginate: { itemsPerPage: 10, currentPage: p };let i = index">
                 <td class="text-center align-middle">{{ i + 1 }}</td>
                 <td class="align-middle">
-                  <img [src]="item.image" width="100px" height="100px" alt="No image...">
+                  <img [src]="item.image" width="200px" height="150px" alt="No image...">
                 </td>
                 <td class="align-middle">{{ item.description | slice: 0:250 }}</td>
                 <td class="align-middle">{{ item.createdDate | date: 'dd/MM/yyyy' }}</td>

@@ -36,14 +36,14 @@
                             <label class="control-label required">Người tạo</label>
                             <input type="text" class="form-control" [(ngModel)]="target.createdBy" name="createdBy"
                                 #createdBy="ngModel" maxlength="200" required
-                                [disabled]="dataRef.actionType === statusAction.detail" />
+                                [disabled]="dataRef.actionType === statusAction.detail" required />
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
                         <div class="form-group">
-                            <label class="control-label required">Mô tả tiêu đề</label>
+                            <label class="control-label">Mô tả tiêu đề</label>
                             <input type="text" class="form-control" name="description"
-                                [(ngModel)]="target.description" #description="ngModel" maxlength="200" required
+                                [(ngModel)]="target.description" #description="ngModel" maxlength="500"
                                 [disabled]="dataRef.actionType === statusAction.detail" />
                         </div>
                     </div>
@@ -58,10 +58,10 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
                         <div class="form-group">
-                            <label class="control-label required">Đường dẫn ảnh</label>
+                            <label class="control-label">Đường dẫn ảnh</label>
                             <input type="url" class="form-control" name="link"
                                 [(ngModel)]="target.link" #link="ngModel"
-                                [disabled]="dataRef.actionType === statusAction.detail" required/>
+                                [disabled]="dataRef.actionType === statusAction.detail"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
