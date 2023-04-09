@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../../@core/data/FashionShopApi.service';
+import { CategoryProductService } from './category-product.service';
 
 @Component({
   selector: 'ngx-category-product',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service: CategoryProductService) { }
+  target: any[];
 
   ngOnInit(): void {
+    this._service.selectCategory().subscribe(res => {
+      this.target = [{name: 'Tất cả'},...res];
+      console.log(this.target)
+    })
+  }
+
+  productCategory: any[];
+
+  getProduct(value: number): void {
+
   }
 
 }
