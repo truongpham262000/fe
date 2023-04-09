@@ -14,7 +14,7 @@ export class BodyClientSliderComponent implements OnInit {
   ngOnInit(): void {
     this._service.selectAllSlider().subscribe(res => {
       this.target = res;
-    })
+    });
   }
 
 }

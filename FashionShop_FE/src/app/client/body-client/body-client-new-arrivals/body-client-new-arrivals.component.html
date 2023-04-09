@@ -53,12 +53,9 @@
                                     <img [src]="item.productImage" height="350px"
                                         class="card-img-top" alt="iPhone" />
                                     <a href="#!">
-                                    <div class="mask">
-                                        <div class="d-flex justify-content-start align-items-end h-100"></div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                    </div>
+                                        <div class="hover-overlay">
+                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="card-body text-center">
@@ -125,6 +122,41 @@
                                     <div class="hover-overlay">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                     </div>
+                                    </a>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="" class="text-reset">
+                                        <h5 class="card-title mb-3">{{ item.productName }}</h5>
+                                    </a>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <div class="d-flex flex-row">
+                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                            Chi tiết
+                                        </button>
+                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nb-tab>
+                <nb-tab tabTitle="SẢN PHẨM MỚI" responsive>
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of targetMen | slice:0:4">
+                            <div class="card">
+                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                    <img [src]="item.productImage" height="350px"
+                                        class="card-img-top" alt="iPhone" />
+                                    <a href="#!">
+                                        <div class="mask m-2">
+                                            <div class="d-flex justify-content-start align-items-start h-100">
+                                                <h5><span class="badge bg-success ms-2">mới</span></h5>
+                                            </div>
+                                        </div>
+                                        <div class="hover-overlay">
+                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="card-body text-center">
