@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Client, Product } from '../../@core/data/FashionShopApi.service';
+import { Client, Product, Slider } from '../../@core/data/FashionShopApi.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +11,8 @@ export class BodyClientService {
 
   selectProduct(): Observable<Product[]> {
     return this._api.productsAll();
+  }
+  selectAllSlider(): Observable<Slider[]> {
+    return this._api.slidersAll();
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Slider } from '../../../@core/data/FashionShopApi.service';
+import { BodyClientService } from '../body-client.service';
 
 @Component({
   selector: 'ngx-body-client-slider',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyClientSliderComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _service: BodyClientService) { }
+  target: Slider[] = [];
   ngOnInit(): void {
+    this._service.selectAllSlider().subscribe(res => {
+      this.target = res;
+    })
   }
 
 }

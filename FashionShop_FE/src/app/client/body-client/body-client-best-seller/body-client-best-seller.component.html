@@ -4,15 +4,29 @@
             <h4>SẢN PHẨM GIẢM GIÁ</h4>
         </div>
         <div class="row">
-            <div class="col-md-3 col-lg-3 mb-4 mb-lg-0" *ngFor="let item of target">
-                <div class="card text-black">
-                    <img [src]="item.productImage" height="350px"
-                        class="card-img-top" alt="iPhone" />
-                    <div class="card-body">
-                        <div class="text-center mt-1">
-                            <h4 class="card-title">{{ item.productName }}</h4>
-                            <h6 class="text-primary mb-1 pb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
-                        </div>
+            <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of target| slice: 0:4">
+                <div class="card">
+                    <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                        <img [src]="item.productImage"
+                            class="w-100" height="350px" />
+                        <a href="#!">
+                            <div class="mask">
+                                <div class="d-flex justify-content-start align-items-end h-100">
+                                    <h5><span class="badge bg-danger ms-2">-10%</span></h5>
+                                </div>
+                            </div>
+                            <div class="hover-overlay">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="" class="text-reset">
+                            <h5 class="card-title mb-3">{{ item.productName }}</h5>
+                        </a>
+                        <h6 class="mb-3">
+                            Giá: {{ item.price | number: '1.0-0' }} VND
+                        </h6>
                         <div class="d-flex flex-row">
                             <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
                                 Chi tiết

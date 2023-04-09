@@ -2,245 +2,148 @@
 
 <div class="new_arrivals">
     <div class="container">
-        <div class="row">
+        <div class="row p-5">
             <div class="col text-center">
                 <div class="section_title new_arrivals_title">
                     <h2>SẢN PHẨM MỚI</h2>
                 </div>
             </div>
         </div>
-        <div class="row align-items-center">
-            <div class="col text-center">
-                <div class="new_arrivals_sorting">
-                    <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">Tất cả</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">Thời trang nữ</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">Phụ kiện</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Thời trang nam</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="row">
-            <div class="col mb-1">
-                <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-
-                    <!-- Product 1 -->
-
-                    <div class="product-item men">
-                        <div class="product discount product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_1.png" alt="">
-                            </div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Fujifilm X100T</a></h6>
-                                <div class="product_price">$520.00<span>$590.00</span></div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+            <nb-tabset>
+                <nb-tab tabTitle="TẤT CẢ" responsive>
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of target | slice:0:8">
+                            <div class="card">
+                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                    <img [src]="item.productImage" height="350px"
+                                        class="card-img-top" alt="iPhone" />
+                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-end h-100"></div>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="" class="text-reset">
+                                        <h5 class="card-title mb-3">{{ item.productName }}</h5>
+                                    </a>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <div class="d-flex flex-row">
+                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                            Chi tiết
+                                        </button>
+                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Product 2 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_2.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Samsung CF591 Series</a></h6>
-                                <div class="product_price">$610.00</div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                </nb-tab>
+                <nb-tab tabTitle="THỜI TRANG NAM" responsive>
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of targetMen | slice:0:4">
+                            <div class="card">
+                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                    <img [src]="item.productImage" height="350px"
+                                        class="card-img-top" alt="iPhone" />
+                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-end h-100"></div>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="" class="text-reset">
+                                        <h5 class="card-title mb-3">{{ item.productName }}</h5>
+                                    </a>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <div class="d-flex flex-row">
+                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                            Chi tiết
+                                        </button>
+                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Product 3 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_3.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Blue Yeti USB</a></h6>
-                                <div class="product_price">$120.00</div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                </nb-tab>
+                <nb-tab tabTitle="PHỤ KIỆN" responsive>
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of targetAccesstories | slice:0:4">
+                            <div class="card">
+                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                    <img [src]="item.productImage" height="350px"
+                                        class="card-img-top" alt="iPhone" />
+                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-end h-100"></div>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="" class="text-reset">
+                                        <h5 class="card-title mb-3">{{ item.productName }}</h5>
+                                    </a>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <div class="d-flex flex-row">
+                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                            Chi tiết
+                                        </button>
+                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Product 4 -->
-
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_4.png" alt="">
-                            </div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450</a></h6>
-                                <div class="product_price">$410.00</div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                  </nb-tab>
+                <nb-tab tabTitle="THỜI TRANG NỮ" responsive>
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of targetWoment | slice:0:4">
+                            <div class="card">
+                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                    <img [src]="item.productImage" height="350px"
+                                        class="card-img-top" alt="iPhone" />
+                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-end h-100"></div>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="" class="text-reset">
+                                        <h5 class="card-title mb-3">{{ item.productName }}</h5>
+                                    </a>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <div class="d-flex flex-row">
+                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                            Chi tiết
+                                        </button>
+                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Product 5 -->
-
-                    <div class="product-item women men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_5.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Pryma Headphones</a></h6>
-                                <div class="product_price">$180.00</div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 6 -->
-
-                    <div class="product-item accessories">
-                        <div class="product discount product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_6.png" alt="">
-                            </div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP</a></h6>
-                                <div class="product_price">$520.00<span>$590.00</span></div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 7 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_7.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Samsung CF591 Series</a></h6>
-                                <div class="product_price">$610.00</div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 8 -->
-
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_8.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Blue Yeti USB</a></h6>
-                                <div class="product_price">$120.00</div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 9 -->
-
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_9.png" alt="">
-                            </div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450</a></h6>
-                                <div class="product_price">$410.00</div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 10 -->
-
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../../../assets/color_shop/images/product_10.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Pryma Headphones</a></h6>
-                                <div class="product_price">$180.00</div>
-                                <div class="d-flex flex-row p-1">
-                                    <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
-                                        Chi tiết
-                                    </button>
-                                    <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </nb-tab>
+            </nb-tabset>
         </div>
     </div>
 </div>

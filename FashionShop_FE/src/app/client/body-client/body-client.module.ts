@@ -9,6 +9,7 @@ import { BodyClientBestSellerComponent } from './body-client-best-seller/body-cl
 import { BodyClientServiceComponent } from './body-client-service/body-client-service.component';
 import { BodyClientLastestBlogsComponent } from './body-client-lastest-blogs/body-client-lastest-blogs.component';
 import { ThemeModule } from '../../@theme/theme.module';
+import { NbTableModule, NbTabsetModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { ThemeModule } from '../../@theme/theme.module';
   ],
   imports: [
     CommonModule,
-    ThemeModule
+    ThemeModule,
+    NbTableModule,
+    NbTabsetModule
   ]
 })
 export class BodyClientModule { }
