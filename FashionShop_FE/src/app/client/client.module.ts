@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ThemeModule } from '../@theme/theme.module';
 import { ClientRoutingModule } from './client-routing.module';
 import { NbCardModule, NbListModule, NbTableModule, NbTabsetModule } from '@nebular/theme';
@@ -14,6 +13,9 @@ import { AboutComponent } from './about/about.component';
 import { UserInforComponent } from './user-infor/user-infor.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,12 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     CommonModule,
     ThemeModule,
-    ClientRoutingModule,
     NbCardModule,
-    NbListModule,
-    NbTableModule,
     NbTabsetModule,
     BodyClientModule,
+    ClientRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ]
 })
 export class ClientModule { }

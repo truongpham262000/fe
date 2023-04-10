@@ -15,7 +15,6 @@ export class CategoryProductComponent implements OnInit {
   ngOnInit(): void {
     this._service.selectCategory().subscribe(res => {
       this.target = [{name: 'Tất cả'},...res];
-      console.log(this.target)
     })
   }
 

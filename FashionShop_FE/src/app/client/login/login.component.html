@@ -6,39 +6,40 @@
             class="img-fluid" alt="Phone image">
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-          <form>
+          <form (ngSubmit)="login()" #form="ngForm">
             <!-- Email input -->
             <div class="form-group mb-4">
               <label class="form-label required" for="form1Example13">Tài khoản</label>
-              <input type="text" id="form1Example13" class="form-control form-control-lg" required />
+              <input type="text" id="form1Example13" [(ngModel)]="username" name="username" class="form-control form-control-lg" required />
             </div>
   
             <!-- Password input -->
             <div class="form-group mb-4">
               <label class="form-label required" for="form1Example23">Mật khẩu</label>
-              <input type="password" id="form1Example23" class="form-control form-control-lg" required />
+              <input type="password" id="form1Example23" [(ngModel)]="password" name="password" class="form-control form-control-lg" required />
             </div>
-  
+            <p *ngIf="errortext !== null">{{ errortext }}</p>
             <div class="d-flex justify-content-around align-items-center mb-4">
               <a href="register">Forgot password?</a>
             </div>
-  
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
-  
+          </form>
+          <div class="col-md-12">
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
             </div>
-  
             <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
               role="button">
-              <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+              <i class="fab fa-facebook-f me-2"></i>
+              Continue with Facebook
             </a>
             <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
               role="button">
-              <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
-  
-          </form>
+              <i class="fab fa-twitter me-2"></i>
+              Continue with Twitter
+            </a>
+          </div>
         </div>
       </div>
     </div>
