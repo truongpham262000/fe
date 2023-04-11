@@ -11,11 +11,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { CartComponent } from './cart/cart.component';
 import { AboutComponent } from './about/about.component';
 import { UserInforComponent } from './user-infor/user-infor.component';
-import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { CommonModule } from '@angular/common';
     CartComponent,
     AboutComponent,
     UserInforComponent,
-    LoginComponent,
     RegisterComponent,
   ],
   imports: [
@@ -38,6 +37,7 @@ import { CommonModule } from '@angular/common';
     BodyClientModule,
     ClientRoutingModule,
     FormsModule,
+    LoginModule,
     HttpClientModule,
   ]
 })

@@ -403,15 +403,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(About.fromJS(item, _mappings));
+                    result200!.push(About.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -467,12 +466,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = About.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = About.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -522,12 +520,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = About.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = About.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -679,15 +676,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(CartItem.fromJS(item, _mappings));
+                    result200!.push(CartItem.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -743,12 +739,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = CartItem.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = CartItem.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -798,12 +793,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = CartItem.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = CartItem.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -955,15 +949,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Cart.fromJS(item, _mappings));
+                    result200!.push(Cart.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -1019,12 +1012,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Cart.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Cart.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -1074,12 +1066,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Cart.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Cart.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -1231,15 +1222,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Category.fromJS(item, _mappings));
+                    result200!.push(Category.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -1295,12 +1285,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Category.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Category.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -1350,12 +1339,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Category.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Category.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -1507,15 +1495,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Comment.fromJS(item, _mappings));
+                    result200!.push(Comment.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -1571,12 +1558,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Comment.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Comment.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -1626,12 +1612,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Comment.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Comment.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -1783,15 +1768,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Coupon.fromJS(item, _mappings));
+                    result200!.push(Coupon.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -1847,12 +1831,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Coupon.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Coupon.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -1902,12 +1885,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Coupon.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Coupon.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -2059,15 +2041,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Favorite.fromJS(item, _mappings));
+                    result200!.push(Favorite.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -2123,12 +2104,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Favorite.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Favorite.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -2178,12 +2158,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Favorite.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Favorite.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -2335,15 +2314,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(FeedBack.fromJS(item, _mappings));
+                    result200!.push(FeedBack.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -2399,12 +2377,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = FeedBack.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = FeedBack.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -2454,12 +2431,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = FeedBack.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = FeedBack.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -2611,15 +2587,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Payment.fromJS(item, _mappings));
+                    result200!.push(Payment.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -2675,12 +2650,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Payment.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Payment.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -2730,12 +2704,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Payment.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Payment.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -2887,15 +2860,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Product.fromJS(item, _mappings));
+                    result200!.push(Product.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -2951,12 +2923,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Product.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Product.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -3006,12 +2977,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Product.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Product.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -3163,15 +3133,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Role.fromJS(item, _mappings));
+                    result200!.push(Role.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -3227,12 +3196,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Role.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Role.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -3282,12 +3250,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Role.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Role.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -3439,15 +3406,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Sale.fromJS(item, _mappings));
+                    result200!.push(Sale.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -3503,12 +3469,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Sale.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Sale.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -3558,12 +3523,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Sale.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Sale.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -3715,15 +3679,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(SizeProduct.fromJS(item, _mappings));
+                    result200!.push(SizeProduct.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -3779,12 +3742,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = SizeProduct.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = SizeProduct.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -3834,12 +3796,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = SizeProduct.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = SizeProduct.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -3991,15 +3952,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(Slider.fromJS(item, _mappings));
+                    result200!.push(Slider.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -4055,12 +4015,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Slider.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Slider.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -4110,12 +4069,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = Slider.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Slider.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -4324,15 +4282,14 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             if (Array.isArray(resultData200)) {
                 result200 = [] as any;
                 for (let item of resultData200)
-                    result200!.push(User.fromJS(item, _mappings));
+                    result200!.push(User.fromJS(item));
             }
             else {
                 result200 = <any>null;
@@ -4388,12 +4345,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = User.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = User.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -4443,12 +4399,11 @@ export class Client implements IClient {
             (response as any).error instanceof Blob ? (response as any).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        let _mappings: { source: any, target: any }[] = [];
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
-            result200 = User.fromJS(resultData200, _mappings);
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = User.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204 && status !== 201) {
@@ -4587,7 +4542,7 @@ export class About implements IAbout {
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.aboutId = _data["aboutId"];
             this.title = _data["title"];
@@ -4603,9 +4558,11 @@ export class About implements IAbout {
         }
     }
 
-    static fromJS(data: any, _mappings?: any): About | null {
+    static fromJS(data: any): About {
         data = typeof data === 'object' ? data : {};
-        return createInstance<About>(data, _mappings, About);
+        let result = new About();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -4668,19 +4625,10 @@ export class Cart implements ICart {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            if (data.cartItems) {
-                this.cartItems = [];
-                for (let i = 0; i < data.cartItems.length; i++) {
-                    let item = data.cartItems[i];
-                    this.cartItems[i] = item && !(<any>item).toJSON ? new CartItem(item) : <CartItem>item;
-                }
-            }
-            this.coupon = data.coupon && !(<any>data.coupon).toJSON ? new Coupon(data.coupon) : <Coupon>this.coupon;
-            this.payment = data.payment && !(<any>data.payment).toJSON ? new Payment(data.payment) : <Payment>this.payment;
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.cartId = _data["cartId"];
             this.userId = _data["userId"];
@@ -4703,16 +4651,18 @@ export class Cart implements ICart {
             if (Array.isArray(_data["cartItems"])) {
                 (<any>this).cartItems = [] as any;
                 for (let item of _data["cartItems"])
-                    (<any>this).cartItems!.push(CartItem.fromJS(item, _mappings));
+                    (<any>this).cartItems!.push(CartItem.fromJS(item));
             }
-            this.coupon = _data["coupon"] ? Coupon.fromJS(_data["coupon"], _mappings) : <any>undefined;
-            this.payment = _data["payment"] ? Payment.fromJS(_data["payment"], _mappings) : <any>undefined;
+            this.coupon = _data["coupon"] ? Coupon.fromJS(_data["coupon"]) : <any>undefined;
+            this.payment = _data["payment"] ? Payment.fromJS(_data["payment"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Cart | null {
+    static fromJS(data: any): Cart {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Cart>(data, _mappings, Cart);
+        let result = new Cart();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -4765,9 +4715,9 @@ export interface ICart {
     status?: number | undefined;
     createAt?: Date | undefined;
     content?: string | undefined;
-    cartItems?: ICartItem[] | undefined;
-    coupon?: ICoupon;
-    payment?: IPayment;
+    cartItems?: CartItem[] | undefined;
+    coupon?: Coupon;
+    payment?: Payment;
 }
 
 export class CartItem implements ICartItem {
@@ -4788,12 +4738,10 @@ export class CartItem implements ICartItem {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            this.cart = data.cart && !(<any>data.cart).toJSON ? new Cart(data.cart) : <Cart>this.cart;
-            this.product = data.product && !(<any>data.product).toJSON ? new Product(data.product) : <Product>this.product;
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.cartItemId = _data["cartItemId"];
             this.productId = _data["productId"];
@@ -4803,14 +4751,16 @@ export class CartItem implements ICartItem {
             this.quantity = _data["quantity"];
             this.createAt = _data["createAt"] ? new Date(_data["createAt"].toString()) : <any>undefined;
             this.content = _data["content"];
-            this.cart = _data["cart"] ? Cart.fromJS(_data["cart"], _mappings) : <any>undefined;
-            this.product = _data["product"] ? Product.fromJS(_data["product"], _mappings) : <any>undefined;
+            this.cart = _data["cart"] ? Cart.fromJS(_data["cart"]) : <any>undefined;
+            this.product = _data["product"] ? Product.fromJS(_data["product"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any, _mappings?: any): CartItem | null {
+    static fromJS(data: any): CartItem {
         data = typeof data === 'object' ? data : {};
-        return createInstance<CartItem>(data, _mappings, CartItem);
+        let result = new CartItem();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -4838,8 +4788,8 @@ export interface ICartItem {
     quantity?: number | undefined;
     createAt?: Date | undefined;
     content?: string | undefined;
-    cart?: ICart;
-    product?: IProduct;
+    cart?: Cart;
+    product?: Product;
 }
 
 export class Category implements ICategory {
@@ -4860,17 +4810,10 @@ export class Category implements ICategory {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            if (data.products) {
-                this.products = [];
-                for (let i = 0; i < data.products.length; i++) {
-                    let item = data.products[i];
-                    this.products[i] = item && !(<any>item).toJSON ? new Product(item) : <Product>item;
-                }
-            }
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.categoryId = _data["categoryId"];
             this.name = _data["name"];
@@ -4884,14 +4827,16 @@ export class Category implements ICategory {
             if (Array.isArray(_data["products"])) {
                 (<any>this).products = [] as any;
                 for (let item of _data["products"])
-                    (<any>this).products!.push(Product.fromJS(item, _mappings));
+                    (<any>this).products!.push(Product.fromJS(item));
             }
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Category | null {
+    static fromJS(data: any): Category {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Category>(data, _mappings, Category);
+        let result = new Category();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -4924,7 +4869,7 @@ export interface ICategory {
     metaKeywords?: string | undefined;
     metaDescriptions?: string | undefined;
     status?: number | undefined;
-    products?: IProduct[] | undefined;
+    products?: Product[] | undefined;
 }
 
 export class Comment implements IComment {
@@ -4942,26 +4887,26 @@ export class Comment implements IComment {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            this.product = data.product && !(<any>data.product).toJSON ? new Product(data.product) : <Product>this.product;
-            this.user = data.user && !(<any>data.user).toJSON ? new User(data.user) : <User>this.user;
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.commentId = _data["commentId"];
             this.userId = _data["userId"];
             this.productId = _data["productId"];
             this.commentText = _data["commentText"];
             this.createAt = _data["createAt"] ? new Date(_data["createAt"].toString()) : <any>undefined;
-            this.product = _data["product"] ? Product.fromJS(_data["product"], _mappings) : <any>undefined;
-            this.user = _data["user"] ? User.fromJS(_data["user"], _mappings) : <any>undefined;
+            this.product = _data["product"] ? Product.fromJS(_data["product"]) : <any>undefined;
+            this.user = _data["user"] ? User.fromJS(_data["user"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Comment | null {
+    static fromJS(data: any): Comment {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Comment>(data, _mappings, Comment);
+        let result = new Comment();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -4983,8 +4928,8 @@ export interface IComment {
     productId?: number | undefined;
     commentText?: string | undefined;
     createAt?: Date | undefined;
-    product?: IProduct;
-    user?: IUser;
+    product?: Product;
+    user?: User;
 }
 
 export class Coupon implements ICoupon {
@@ -5001,17 +4946,10 @@ export class Coupon implements ICoupon {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            if (data.carts) {
-                this.carts = [];
-                for (let i = 0; i < data.carts.length; i++) {
-                    let item = data.carts[i];
-                    this.carts[i] = item && !(<any>item).toJSON ? new Cart(item) : <Cart>item;
-                }
-            }
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.couponId = _data["couponId"];
             this.code = _data["code"];
@@ -5021,14 +4959,16 @@ export class Coupon implements ICoupon {
             if (Array.isArray(_data["carts"])) {
                 (<any>this).carts = [] as any;
                 for (let item of _data["carts"])
-                    (<any>this).carts!.push(Cart.fromJS(item, _mappings));
+                    (<any>this).carts!.push(Cart.fromJS(item));
             }
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Coupon | null {
+    static fromJS(data: any): Coupon {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Coupon>(data, _mappings, Coupon);
+        let result = new Coupon();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5053,7 +4993,7 @@ export interface ICoupon {
     count?: number | undefined;
     promotion?: number | undefined;
     describe?: string | undefined;
-    carts?: ICart[] | undefined;
+    carts?: Cart[] | undefined;
 }
 
 export class Favorite implements IFavorite {
@@ -5069,24 +5009,24 @@ export class Favorite implements IFavorite {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            this.product = data.product && !(<any>data.product).toJSON ? new Product(data.product) : <Product>this.product;
-            this.user = data.user && !(<any>data.user).toJSON ? new User(data.user) : <User>this.user;
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.favoriteId = _data["favoriteId"];
             this.userId = _data["userId"];
             this.productId = _data["productId"];
-            this.product = _data["product"] ? Product.fromJS(_data["product"], _mappings) : <any>undefined;
-            this.user = _data["user"] ? User.fromJS(_data["user"], _mappings) : <any>undefined;
+            this.product = _data["product"] ? Product.fromJS(_data["product"]) : <any>undefined;
+            this.user = _data["user"] ? User.fromJS(_data["user"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Favorite | null {
+    static fromJS(data: any): Favorite {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Favorite>(data, _mappings, Favorite);
+        let result = new Favorite();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5104,8 +5044,8 @@ export interface IFavorite {
     favoriteId?: number;
     userId?: number | undefined;
     productId?: number | undefined;
-    product?: IProduct;
-    user?: IUser;
+    product?: Product;
+    user?: User;
 }
 
 export class FeedBack implements IFeedBack {
@@ -5126,11 +5066,10 @@ export class FeedBack implements IFeedBack {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            this.user = data.user && !(<any>data.user).toJSON ? new User(data.user) : <User>this.user;
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.feedbackId = _data["feedbackId"];
             this.userId = _data["userId"];
@@ -5141,13 +5080,15 @@ export class FeedBack implements IFeedBack {
             this.content = _data["content"];
             this.status = _data["status"];
             this.createdDate = _data["createdDate"] ? new Date(_data["createdDate"].toString()) : <any>undefined;
-            this.user = _data["user"] ? User.fromJS(_data["user"], _mappings) : <any>undefined;
+            this.user = _data["user"] ? User.fromJS(_data["user"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any, _mappings?: any): FeedBack | null {
+    static fromJS(data: any): FeedBack {
         data = typeof data === 'object' ? data : {};
-        return createInstance<FeedBack>(data, _mappings, FeedBack);
+        let result = new FeedBack();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5176,7 +5117,7 @@ export interface IFeedBack {
     content?: string | undefined;
     status?: number | undefined;
     createdDate?: Date | undefined;
-    user?: IUser;
+    user?: User;
 }
 
 export class Payment implements IPayment {
@@ -5190,31 +5131,26 @@ export class Payment implements IPayment {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            if (data.carts) {
-                this.carts = [];
-                for (let i = 0; i < data.carts.length; i++) {
-                    let item = data.carts[i];
-                    this.carts[i] = item && !(<any>item).toJSON ? new Cart(item) : <Cart>item;
-                }
-            }
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.paymentId = _data["paymentId"];
             this.paymentName = _data["paymentName"];
             if (Array.isArray(_data["carts"])) {
                 (<any>this).carts = [] as any;
                 for (let item of _data["carts"])
-                    (<any>this).carts!.push(Cart.fromJS(item, _mappings));
+                    (<any>this).carts!.push(Cart.fromJS(item));
             }
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Payment | null {
+    static fromJS(data: any): Payment {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Payment>(data, _mappings, Payment);
+        let result = new Payment();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5233,7 +5169,7 @@ export class Payment implements IPayment {
 export interface IPayment {
     paymentId?: number;
     paymentName?: string | undefined;
-    carts?: ICart[] | undefined;
+    carts?: Cart[] | undefined;
 }
 
 export class Product implements IProduct {
@@ -5269,40 +5205,10 @@ export class Product implements IProduct {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            if (data.cartItems) {
-                this.cartItems = [];
-                for (let i = 0; i < data.cartItems.length; i++) {
-                    let item = data.cartItems[i];
-                    this.cartItems[i] = item && !(<any>item).toJSON ? new CartItem(item) : <CartItem>item;
-                }
-            }
-            this.category = data.category && !(<any>data.category).toJSON ? new Category(data.category) : <Category>this.category;
-            if (data.comments) {
-                this.comments = [];
-                for (let i = 0; i < data.comments.length; i++) {
-                    let item = data.comments[i];
-                    this.comments[i] = item && !(<any>item).toJSON ? new Comment(item) : <Comment>item;
-                }
-            }
-            if (data.favorites) {
-                this.favorites = [];
-                for (let i = 0; i < data.favorites.length; i++) {
-                    let item = data.favorites[i];
-                    this.favorites[i] = item && !(<any>item).toJSON ? new Favorite(item) : <Favorite>item;
-                }
-            }
-            if (data.sales) {
-                this.sales = [];
-                for (let i = 0; i < data.sales.length; i++) {
-                    let item = data.sales[i];
-                    this.sales[i] = item && !(<any>item).toJSON ? new Sale(item) : <Sale>item;
-                }
-            }
-            this.size = data.size && !(<any>data.size).toJSON ? new SizeProduct(data.size) : <SizeProduct>this.size;
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.productId = _data["productId"];
             this.productCode = _data["productCode"];
@@ -5326,31 +5232,33 @@ export class Product implements IProduct {
             if (Array.isArray(_data["cartItems"])) {
                 (<any>this).cartItems = [] as any;
                 for (let item of _data["cartItems"])
-                    (<any>this).cartItems!.push(CartItem.fromJS(item, _mappings));
+                    (<any>this).cartItems!.push(CartItem.fromJS(item));
             }
-            this.category = _data["category"] ? Category.fromJS(_data["category"], _mappings) : <any>undefined;
+            this.category = _data["category"] ? Category.fromJS(_data["category"]) : <any>undefined;
             if (Array.isArray(_data["comments"])) {
                 (<any>this).comments = [] as any;
                 for (let item of _data["comments"])
-                    (<any>this).comments!.push(Comment.fromJS(item, _mappings));
+                    (<any>this).comments!.push(Comment.fromJS(item));
             }
             if (Array.isArray(_data["favorites"])) {
                 (<any>this).favorites = [] as any;
                 for (let item of _data["favorites"])
-                    (<any>this).favorites!.push(Favorite.fromJS(item, _mappings));
+                    (<any>this).favorites!.push(Favorite.fromJS(item));
             }
             if (Array.isArray(_data["sales"])) {
                 (<any>this).sales = [] as any;
                 for (let item of _data["sales"])
-                    (<any>this).sales!.push(Sale.fromJS(item, _mappings));
+                    (<any>this).sales!.push(Sale.fromJS(item));
             }
-            this.size = _data["size"] ? SizeProduct.fromJS(_data["size"], _mappings) : <any>undefined;
+            this.size = _data["size"] ? SizeProduct.fromJS(_data["size"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Product | null {
+    static fromJS(data: any): Product {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Product>(data, _mappings, Product);
+        let result = new Product();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5420,12 +5328,12 @@ export interface IProduct {
     metaDescriptions?: string | undefined;
     status?: number | undefined;
     viewCounts?: number | undefined;
-    cartItems?: ICartItem[] | undefined;
-    category?: ICategory;
-    comments?: IComment[] | undefined;
-    favorites?: IFavorite[] | undefined;
-    sales?: ISale[] | undefined;
-    size?: ISizeProduct;
+    cartItems?: CartItem[] | undefined;
+    category?: Category;
+    comments?: Comment[] | undefined;
+    favorites?: Favorite[] | undefined;
+    sales?: Sale[] | undefined;
+    size?: SizeProduct;
 }
 
 export class Role implements IRole {
@@ -5439,31 +5347,26 @@ export class Role implements IRole {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            if (data.users) {
-                this.users = [];
-                for (let i = 0; i < data.users.length; i++) {
-                    let item = data.users[i];
-                    this.users[i] = item && !(<any>item).toJSON ? new User(item) : <User>item;
-                }
-            }
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.rolesId = _data["rolesId"];
             this.rolesName = _data["rolesName"];
             if (Array.isArray(_data["users"])) {
                 (<any>this).users = [] as any;
                 for (let item of _data["users"])
-                    (<any>this).users!.push(User.fromJS(item, _mappings));
+                    (<any>this).users!.push(User.fromJS(item));
             }
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Role | null {
+    static fromJS(data: any): Role {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Role>(data, _mappings, Role);
+        let result = new Role();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5482,7 +5385,7 @@ export class Role implements IRole {
 export interface IRole {
     rolesId?: number;
     rolesName?: string | undefined;
-    users?: IUser[] | undefined;
+    users?: User[] | undefined;
 }
 
 export class Sale implements ISale {
@@ -5501,11 +5404,10 @@ export class Sale implements ISale {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            this.product = data.product && !(<any>data.product).toJSON ? new Product(data.product) : <Product>this.product;
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.saleId = _data["saleId"];
             this.promotion = _data["promotion"];
@@ -5514,13 +5416,15 @@ export class Sale implements ISale {
             this.startDate = _data["startDate"] ? new Date(_data["startDate"].toString()) : <any>undefined;
             this.endDate = _data["endDate"] ? new Date(_data["endDate"].toString()) : <any>undefined;
             this.productId = _data["productId"];
-            this.product = _data["product"] ? Product.fromJS(_data["product"], _mappings) : <any>undefined;
+            this.product = _data["product"] ? Product.fromJS(_data["product"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Sale | null {
+    static fromJS(data: any): Sale {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Sale>(data, _mappings, Sale);
+        let result = new Sale();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5545,7 +5449,7 @@ export interface ISale {
     startDate?: Date | undefined;
     endDate?: Date | undefined;
     productId?: number | undefined;
-    product?: IProduct;
+    product?: Product;
 }
 
 export class SizeProduct implements ISizeProduct {
@@ -5559,31 +5463,26 @@ export class SizeProduct implements ISizeProduct {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            if (data.products) {
-                this.products = [];
-                for (let i = 0; i < data.products.length; i++) {
-                    let item = data.products[i];
-                    this.products[i] = item && !(<any>item).toJSON ? new Product(item) : <Product>item;
-                }
-            }
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.sizeId = _data["sizeId"];
             this.sizeName = _data["sizeName"];
             if (Array.isArray(_data["products"])) {
                 (<any>this).products = [] as any;
                 for (let item of _data["products"])
-                    (<any>this).products!.push(Product.fromJS(item, _mappings));
+                    (<any>this).products!.push(Product.fromJS(item));
             }
         }
     }
 
-    static fromJS(data: any, _mappings?: any): SizeProduct | null {
+    static fromJS(data: any): SizeProduct {
         data = typeof data === 'object' ? data : {};
-        return createInstance<SizeProduct>(data, _mappings, SizeProduct);
+        let result = new SizeProduct();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5602,7 +5501,7 @@ export class SizeProduct implements ISizeProduct {
 export interface ISizeProduct {
     sizeId?: number;
     sizeName?: string | undefined;
-    products?: IProduct[] | undefined;
+    products?: Product[] | undefined;
 }
 
 export class Slider implements ISlider {
@@ -5623,7 +5522,7 @@ export class Slider implements ISlider {
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.slideId = _data["slideId"];
             this.image = _data["image"];
@@ -5635,9 +5534,11 @@ export class Slider implements ISlider {
         }
     }
 
-    static fromJS(data: any, _mappings?: any): Slider | null {
+    static fromJS(data: any): Slider {
         data = typeof data === 'object' ? data : {};
-        return createInstance<Slider>(data, _mappings, Slider);
+        let result = new Slider();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5685,32 +5586,10 @@ export class User implements IUser {
                 if (data.hasOwnProperty(property))
                     (<any>this)[property] = (<any>data)[property];
             }
-            if (data.comments) {
-                this.comments = [];
-                for (let i = 0; i < data.comments.length; i++) {
-                    let item = data.comments[i];
-                    this.comments[i] = item && !(<any>item).toJSON ? new Comment(item) : <Comment>item;
-                }
-            }
-            if (data.favorites) {
-                this.favorites = [];
-                for (let i = 0; i < data.favorites.length; i++) {
-                    let item = data.favorites[i];
-                    this.favorites[i] = item && !(<any>item).toJSON ? new Favorite(item) : <Favorite>item;
-                }
-            }
-            if (data.feedBacks) {
-                this.feedBacks = [];
-                for (let i = 0; i < data.feedBacks.length; i++) {
-                    let item = data.feedBacks[i];
-                    this.feedBacks[i] = item && !(<any>item).toJSON ? new FeedBack(item) : <FeedBack>item;
-                }
-            }
-            this.roles = data.roles && !(<any>data.roles).toJSON ? new Role(data.roles) : <Role>this.roles;
         }
     }
 
-    init(_data?: any, _mappings?: any) {
+    init(_data?: any) {
         if (_data) {
             this.userId = _data["userId"];
             this.userName = _data["userName"];
@@ -5725,25 +5604,27 @@ export class User implements IUser {
             if (Array.isArray(_data["comments"])) {
                 (<any>this).comments = [] as any;
                 for (let item of _data["comments"])
-                    (<any>this).comments!.push(Comment.fromJS(item, _mappings));
+                    (<any>this).comments!.push(Comment.fromJS(item));
             }
             if (Array.isArray(_data["favorites"])) {
                 (<any>this).favorites = [] as any;
                 for (let item of _data["favorites"])
-                    (<any>this).favorites!.push(Favorite.fromJS(item, _mappings));
+                    (<any>this).favorites!.push(Favorite.fromJS(item));
             }
             if (Array.isArray(_data["feedBacks"])) {
                 (<any>this).feedBacks = [] as any;
                 for (let item of _data["feedBacks"])
-                    (<any>this).feedBacks!.push(FeedBack.fromJS(item, _mappings));
+                    (<any>this).feedBacks!.push(FeedBack.fromJS(item));
             }
-            this.roles = _data["roles"] ? Role.fromJS(_data["roles"], _mappings) : <any>undefined;
+            this.roles = _data["roles"] ? Role.fromJS(_data["roles"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any, _mappings?: any): User | null {
+    static fromJS(data: any): User {
         data = typeof data === 'object' ? data : {};
-        return createInstance<User>(data, _mappings, User);
+        let result = new User();
+        result.init(data);
+        return result;
     }
 
     toJSON(data?: any) {
@@ -5789,71 +5670,10 @@ export interface IUser {
     address?: string | undefined;
     rolesId?: number | undefined;
     status?: number | undefined;
-    comments?: IComment[] | undefined;
-    favorites?: IFavorite[] | undefined;
-    feedBacks?: IFeedBack[] | undefined;
-    roles?: IRole;
-}
-
-function jsonParse(json: any, reviver?: any) {
-    json = JSON.parse(json, reviver);
-
-    var byid: any = {};
-    var refs: any = [];
-    json = (function recurse(obj: any, prop?: any, parent?: any) {
-        if (typeof obj !== 'object' || !obj)
-            return obj;
-        
-        if ("$ref" in obj) {
-            let ref = obj.$ref;
-            if (ref in byid)
-                return byid[ref];
-            refs.push([parent, prop, ref]);
-            return undefined;
-        } else if ("$id" in obj) {
-            let id = obj.$id;
-            delete obj.$id;
-            if ("$values" in obj)
-                obj = obj.$values;
-            byid[id] = obj;
-        }
-        
-        if (Array.isArray(obj)) {
-            obj = obj.map((v, i) => recurse(v, i, obj));
-        } else {
-            for (var p in obj) {
-                if (obj.hasOwnProperty(p) && obj[p] && typeof obj[p] === 'object')
-                    obj[p] = recurse(obj[p], p, obj);
-            }
-        }
-
-        return obj;
-    })(json);
-
-    for (let i = 0; i < refs.length; i++) {
-        const ref = refs[i];
-        ref[0][ref[1]] = byid[ref[2]];
-    }
-
-    return json;
-}
-
-function createInstance<T>(data: any, mappings: any, type: any): T | null {
-  if (!mappings)
-    mappings = [];
-  if (!data)
-    return null;
-
-  const mappingIndexName = "__mappingIndex";
-  if (data[mappingIndexName])
-    return <T>mappings[data[mappingIndexName]].target;
-
-  data[mappingIndexName] = mappings.length;
-
-  let result: any = new type();
-  mappings.push({ source: data, target: result });
-  result.init(data, mappings);
-  return result;
+    comments?: Comment[] | undefined;
+    favorites?: Favorite[] | undefined;
+    feedBacks?: FeedBack[] | undefined;
+    roles?: Role;
 }
 
 export class ApiException extends Error {

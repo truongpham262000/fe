@@ -12,8 +12,4 @@ export class LoginService {
   selectUser(): Observable<User[]> {
     return this._api.usersAll();
   }
-
-  loginData(username: string,password: string): Observable<void> {
-    return this._api.logInUser(username,password);
-  }
 }
