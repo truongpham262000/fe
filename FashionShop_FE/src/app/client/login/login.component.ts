@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from '../../@core/customs/common.service';
 import { LoginService } from './login.service';
 
 @Component({
@@ -12,7 +11,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _service: LoginService,
-    private commonService: CommonService,
     private routerService: Router
   ) { }
 
@@ -31,14 +29,19 @@ export class LoginComponent implements OnInit {
       this._service.selectUser().subscribe(res => {
         for (const item of res) {
           if(item.userName == this.username && item.password === this.password){
-            this.routerService.navigateByUrl('');
-            this.commonService.toastrSuccess('Đăng nhập thành công.')
+            this.routerService.navigateByUrl('/');
+            this.setToken(item.userId.toString());
+            this.errortext = "Đăng nhập thành công.";
           } else {
-            this.commonService.toastrDanger("Tài khoản hoặc mật khẩu không chính xác !!!");
+            this.errortext = "Tài khoản hoặc mật khẩu không chính xác !!!";
           }
         }
       })
     }
+  }
+
+  setToken(token: string){
+    localStorage.setItem('token', token)
   }
 
 }
