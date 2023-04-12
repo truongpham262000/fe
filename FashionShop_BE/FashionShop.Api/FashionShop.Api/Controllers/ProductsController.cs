@@ -32,6 +32,27 @@ namespace FashionShop.Api.Controllers
             return await _context.Products.ToListAsync();
         }
 
+        [HttpGet]
+        [Route("getCategoryProduct")]
+        public async Task<ActionResult<IEnumerable<Product>>> getCategoryProduct(int idcategory)
+        {
+            try
+            {
+                var data = (from x in _context.Products 
+                            where x.CategoryId == idcategory 
+                            select x).ToList();
+                if (data == null)
+                {
+                    return NotFound();
+                }
+                return data;
+            } catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+            
+        }
+
         // GET: api/Products/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)

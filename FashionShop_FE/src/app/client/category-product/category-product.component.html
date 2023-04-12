@@ -1,38 +1,116 @@
 <div class="container product_section_container">
     <div class="row w-100">
-        <div class="col-lg-12">
-            <h3>DANH MỤC</h3>
+        <div class="col-md-12 col-lg-12 d-flex">
+            <div class="col-lg-10">
+                <h3>DANH MỤC</h3>
+            </div>
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label class="control-label">Sắp xếp sản phẩm</label>
+                    <ng-select [items]="listSort" bindLabel="text" name="listSort"
+                        bindValue="value" [(ngModel)]="selectValue"
+                    ></ng-select>
+                </div>
+            </div>
         </div>
         <div class="col-2">
             <!-- Tab navs -->
             <div class="nav flex-column nav-tabs"
                 id="v-tabs-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link" id="v-tabs-home-tab"
-                    data-mdb-toggle="tab" href="#v-tabs-home" role="tab"
-                    aria-controls="v-tabs-home" ria-selected="true"
-                    *ngFor="let item of target"
-                >{{ item.name }}</a>
+                <ng-container *ngFor="let item of target;let i = index;let fs = first">
+                    <a class="nav-link active fw-bold" *ngIf="fs" id="v-tabs-home-tab"
+                        data-mdb-toggle="tab" [href]="'#v-tabs-home'+i" role="tab"
+                        aria-controls="v-tabs-home" (click)="getDataProduct(0)" ria-selected="true"
+                    
+                    >{{ item.name }}</a>
+                    <a class="nav-link fw-bold" (click)="getDataProduct(item.categoryId)"  *ngIf="!fs" id="v-tabs-home-tab"
+                        data-mdb-toggle="tab" [href]="'#v-tabs-home'+i" role="tab"
+                        aria-controls="v-tabs-home" ria-selected="true"
+                    
+                    >{{ item.name }}</a>
+                </ng-container>
             </div>
         <!-- Tab navs -->
         </div>
       
         <div class="col-10">
             <!-- Tab content -->
-            <div class="tab-content" id="v-tabs-tabContent">
-                <div class="tab-pane fade show active" id="v-tabs-home"
+            <div class="tab-content" id="v-tabs-tabContent" *ngFor="let item of target;let i = index;let fs = first">
+                <div class="tab-pane fade show active" [id]="'v-tabs-home'+i" *ngIf="fs"
                     role="tabpanel" aria-labelledby="v-tabs-home-tab"
                 >
-                    Home content
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of productCategory">
+                            <div class="card">
+                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                    <img [src]="item.productImage" height="350px"
+                                        class="card-img-top" alt="iPhone" />
+                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-end h-100"></div>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="" class="text-reset">
+                                        <h5 class="card-title mb-3">{{ item.productName }}</h5>
+                                    </a>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <div class="d-flex flex-row">
+                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                            Chi tiết
+                                        </button>
+                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="productCategory?.length == 0">
+                        <h5>Không có sản phẩm nào !!!</h5>
+                    </div>
                 </div>
-                <div class="tab-pane fade" id="v-tabs-profile"
-                    role="tabpanel" aria-labelledby="v-tabs-profile-tab"
+                <div class="tab-pane fade show" [id]="'v-tabs-home'+i" *ngIf="!fs"
+                    role="tabpanel" aria-labelledby="v-tabs-home-tab"
                 >
-                    Profile content
-                </div>
-                <div class="tab-pane fade" id="v-tabs-messages"
-                    role="tabpanel" aria-labelledby="v-tabs-messages-tab"
-                >
-                    Messages content
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of productCategory">
+                            <div class="card">
+                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                    <img [src]="item.productImage" height="350px"
+                                        class="card-img-top" alt="iPhone" />
+                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-end h-100"></div>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="" class="text-reset">
+                                        <h5 class="card-title mb-3">{{ item.productName }}</h5>
+                                    </a>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <div class="d-flex flex-row">
+                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                            Chi tiết
+                                        </button>
+                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="productCategory?.length == 0">
+                        <h5>Không có sản phẩm nào !!!</h5>
+                    </div>
                 </div>
           </div>
           <!-- Tab content -->

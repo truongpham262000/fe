@@ -16,4 +16,8 @@ export class CategoryProductService {
   selectProduct(): Observable<Product[]> {
     return this._api.productsAll();
   }
+
+  selectCategoryProduct(key: number): Observable<Product[]> {
+    return this._api.getCategoryProduct(key);
+  }
 }

@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LoginModule } from './login/login.module';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { LoginModule } from './login/login.module';
     FormsModule,
     LoginModule,
     HttpClientModule,
+    NgSelectModule
   ]
 })
 export class ClientModule { }
