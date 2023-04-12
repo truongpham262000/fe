@@ -11,6 +11,7 @@ export class CategoryProductComponent implements OnInit {
 
   constructor(private _service: CategoryProductService) { }
   target: any[];
+  p;
 
   ngOnInit(): void {
     this._service.selectCategory().subscribe(res => {

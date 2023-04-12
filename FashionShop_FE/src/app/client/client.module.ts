@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LoginModule } from './login/login.module';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FormsModule,
     LoginModule,
     HttpClientModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxPaginationModule
   ]
 })
 export class ClientModule { }

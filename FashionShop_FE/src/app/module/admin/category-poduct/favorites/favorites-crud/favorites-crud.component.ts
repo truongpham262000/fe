@@ -52,7 +52,7 @@ export class FavoritesCrudComponent implements OnInit {
 
   save(): void {
     if(this.dataRef.actionType === STATUS_ACTION.create){
-      this._service.insert(this.target).subscribe((res) => {
+      this._service.insert(this.target).subscribe(res => {
         if(res === null){
           this.dialogRef.close(true);
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
@@ -63,8 +63,7 @@ export class FavoritesCrudComponent implements OnInit {
         }
       })
     } else {
-      this._service.update(this.dataRef.key,this.target).subscribe((res) => {
-        console.log(res)
+      this._service.update(this.dataRef.key,this.target).subscribe(res => {
         if(res === null){
           this.commonService.toastrSuccess(SUCCESS_NOTICE);
           this.closeDialog(true);

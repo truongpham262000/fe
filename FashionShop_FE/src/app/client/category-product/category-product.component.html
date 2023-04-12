@@ -2,7 +2,7 @@
     <div class="row w-100">
         <div class="col-md-12 col-lg-12 d-flex">
             <div class="col-lg-10">
-                <h3>DANH MỤC</h3>
+                <h5 class="text-info text-uppercase">Danh mục cửa hàng <i class="fa fa-cart-plus" aria-hidden="true"></i></h5>
             </div>
             <div class="col-lg-2">
                 <div class="form-group">
@@ -17,6 +17,7 @@
             <!-- Tab navs -->
             <div class="nav flex-column nav-tabs"
                 id="v-tabs-tab" role="tablist" aria-orientation="vertical">
+                <h5 class="text-primary text-uppercase">Danh mục</h5>
                 <ng-container *ngFor="let item of target;let i = index;let fs = first">
                     <a class="nav-link active fw-bold" *ngIf="fs" id="v-tabs-home-tab"
                         data-mdb-toggle="tab" [href]="'#v-tabs-home'+i" role="tab"
@@ -40,7 +41,7 @@
                     role="tabpanel" aria-labelledby="v-tabs-home-tab"
                 >
                     <div class="row">
-                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of productCategory">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of productCategory| paginate: { itemsPerPage: 8, currentPage: p }">
                             <div class="card">
                                 <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                                         data-mdb-ripple-color="light">
@@ -70,8 +71,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-4">
+                        <div class="text-right">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>
+                    </div>
                     <div class="row" *ngIf="productCategory?.length == 0">
-                        <h5>Không có sản phẩm nào !!!</h5>
+                        <span class="alert alert-info">Sản phẩm trong kho hiện đã hết hàng !!!</span>
                     </div>
                 </div>
                 <div class="tab-pane fade show" [id]="'v-tabs-home'+i" *ngIf="!fs"
@@ -109,7 +115,7 @@
                         </div>
                     </div>
                     <div class="row" *ngIf="productCategory?.length == 0">
-                        <h5>Không có sản phẩm nào !!!</h5>
+                        <span class="alert alert-info">Sản phẩm trong kho hiện đã hết hàng !!!</span>
                     </div>
                 </div>
           </div>
