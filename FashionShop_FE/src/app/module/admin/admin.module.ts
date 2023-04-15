@@ -8,8 +8,8 @@ import { NbCardModule } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
 import { FormsModule } from '@angular/forms';
 import { DashboardInforModule } from './dashboard-infor/dashboard-infor.module';
-import { DashboardInforComponent } from './dashboard-infor/dashboard-infor.component';
 import { CommonModule } from '@angular/common';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   imports: [
@@ -22,8 +22,9 @@ import { CommonModule } from '@angular/common';
     DashboardInforModule,
     FormsModule,
     NbCardModule,
-    ThemeModule
+    ThemeModule,
+    NgApexchartsModule
   ],
-  declarations: [DashboardInforComponent]
+  declarations: []
 })
 export class AdminModule { }
