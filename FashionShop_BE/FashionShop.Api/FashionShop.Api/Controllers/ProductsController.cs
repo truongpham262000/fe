@@ -31,22 +31,6 @@ namespace FashionShop.Api.Controllers
           }
             return await _context.Products.ToListAsync();
         }
-
-        [HttpGet]
-        [Route("selectFavoriteProduct")]
-        public async Task<ActionResult<IEnumerable<Product>>> selectFavoriteProduct()
-        {
-            if (_context.Products == null)
-            {
-                return NotFound();
-            }
-            var favorite = (from x in _context.Products
-                            join y in _context.Favorites on x.ProductId equals y.ProductId
-                            orderby x.ProductId
-                            select x).ToList();
-            return favorite;
-        }
-
         [HttpGet]
         [Route("getCategoryProduct")]
         public async Task<ActionResult<IEnumerable<Product>>> getCategoryProduct(int idcategory)
