@@ -15,7 +15,7 @@ import { NbToastrModule } from '@nebular/theme';
     CommonModule,
     FormsModule,
     ThemeModule,
-    NbToastrModule.forRoot()
+    NbToastrModule
   ]
 })
 export class LoginModule { }

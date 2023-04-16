@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonService } from '../../../../../@core/customs/common.service';
-import { STATUS_ACTION } from '../../../../../@core/customs/constants';
+import { PAGE_SIZE, STATUS_ACTION } from '../../../../../@core/customs/constants';
 import { DialogConfirmComponent } from '../../../../../@theme/components/template/dialog/dialog-confirm/dialog-confirm.component';
 import { CommentsCrudComponent } from '../comments-crud/comments-crud.component';
 import { CommentsService } from '../comments.service';
@@ -13,7 +13,8 @@ import { CommentsService } from '../comments.service';
 })
 export class CommentsIndexComponent implements OnInit {
   searchText;
-  p;
+  p = 1;
+  size = PAGE_SIZE;
 
   constructor(
     private dialog: MatDialog,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonService } from '../../../../../@core/customs/common.service';
-import { STATUS_ACTION } from '../../../../../@core/customs/constants';
+import { PAGE_SIZE, STATUS_ACTION } from '../../../../../@core/customs/constants';
 import { DialogConfirmComponent } from '../../../../../@theme/components/template/dialog/dialog-confirm/dialog-confirm.component';
 import { CategoryCrudComponent } from '../category-crud/category-crud.component';
 import { CategoryService } from '../category.service';
@@ -13,7 +13,8 @@ import { CategoryService } from '../category.service';
 })
 export class CategoryIndexComponent implements OnInit {
   searchText;
-  p;
+  p = 1;
+  size = PAGE_SIZE;
 
   constructor(
     private dialog: MatDialog,

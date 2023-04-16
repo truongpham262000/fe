@@ -6,7 +6,7 @@ export const ERROR_RESPONE = 'Error';
 export const SUCCESS_NOTICE = 'Thành công';
 export const TITLE_NOTICE = 'Thông báo';
 
-export const PAGE_SIZE = 10;
+export const PAGE_SIZE = 5;
 
 export const WIDTH_DIALOG = '80%';
 export const HEIGHT_DIALOG = '100%';

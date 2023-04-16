@@ -23,8 +23,8 @@
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
                         <div class="form-group">
                             <label class="control-label required">Mật khẩu</label>
-                            <input type="password" class="form-control" name="password"
-                                [(ngModel)]="target.password" #password="ngModel" maxlength="200" required
+                            <input type="text" class="form-control" name="password"
+                                [(ngModel)]="target.password" #password="ngModel" maxlength="30" required
                                 [disabled]="dataRef.actionType === statusAction.detail" />
                         </div>
                     </div>

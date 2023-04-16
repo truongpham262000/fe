@@ -31,8 +31,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of target| filter: searchText| paginate: { itemsPerPage: 10, currentPage: p };let i = index">
-                <td class="text-center align-middle">{{ i + 1 }}</td>
+              <tr *ngFor="let item of target| filter: searchText| paginate: { itemsPerPage: size, currentPage: p };let i = index">
+                <td class="text-center align-middle">{{ ( p - 1 ) * size + i + 1 }}</td>
                 <td class="align-middle">{{ item.code }}</td>
                 <td class="align-middle">{{ item.count }}</td>
                 <td class="align-middle">{{ item.promotion }}</td>

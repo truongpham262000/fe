@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { CommonService } from '../../../../../@core/customs/common.service';
 import { DialogConfirmComponent } from '../../../../../@theme/components/template/dialog/dialog-confirm/dialog-confirm.component';
-import { STATUS_ACTION } from '../../../../../@core/customs/constants';
+import { PAGE_SIZE, STATUS_ACTION } from '../../../../../@core/customs/constants';
 import { UserCrudComponent } from '../user-crud/user-crud.component';
 
 @Component({
@@ -13,7 +13,8 @@ import { UserCrudComponent } from '../user-crud/user-crud.component';
 })
 export class UserIndexComponent implements OnInit {
   searchText;
-  p;
+  p = 1;
+  size = PAGE_SIZE;
 
   constructor(
     private dialog: MatDialog,

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonService } from '../../../../../@core/customs/common.service';
-import { STATUS_ACTION } from '../../../../../@core/customs/constants';
+import { PAGE_SIZE, STATUS_ACTION } from '../../../../../@core/customs/constants';
 import { DialogConfirmComponent } from '../../../../../@theme/components/template/dialog/dialog-confirm/dialog-confirm.component';
 import { ProductCrudComponent } from '../product-crud/product-crud.component';
 import { ProductService } from '../product.service';
@@ -13,7 +13,8 @@ import { ProductService } from '../product.service';
 })
 export class ProductIndexComponent  {
   searchText;
-  p;
+  p = 1;
+  size = PAGE_SIZE;
 
   constructor(
     private dialog: MatDialog,

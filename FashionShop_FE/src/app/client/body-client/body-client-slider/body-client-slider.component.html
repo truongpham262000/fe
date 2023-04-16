@@ -1,10 +1,10 @@
 <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
 	<div class="carousel-inner">
 	  	<ng-container *ngFor="let item of target;let fs = first">
-			<div class="carousel-item active" *ngIf="fs">
+			<div class="carousel-item active" *ngIf="fs && item.status === 1">
 				<img [src]="item.image" class="d-block w-100" alt="Wild Landscape"/>
 			</div>
-			<div class="carousel-item" *ngIf="!fs">
+			<div class="carousel-item" *ngIf="!fs && item.status === 1">
 				<img [src]="item.image" class="d-block w-100" alt="Wild Landscape"/>
 			</div>
 		</ng-container>

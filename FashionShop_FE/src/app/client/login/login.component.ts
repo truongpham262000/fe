@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   setToken(token: string){
-    localStorage.setItem('token', token)
+    localStorage.setItem('login', token)
   }
 
 }

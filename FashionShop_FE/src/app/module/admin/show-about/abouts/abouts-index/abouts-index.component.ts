@@ -1,4 +1,4 @@
-import { STATUS_ACTION } from './../../../../../@core/customs/constants';
+import { STATUS_ACTION, PAGE_SIZE } from './../../../../../@core/customs/constants';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonService } from '../../../../../@core/customs/common.service';
@@ -13,7 +13,8 @@ import { DialogConfirmComponent } from '../../../../../@theme/components/templat
 })
 export class AboutsIndexComponent  {
   searchText;
-  p;
+  p = 1;
+  size = PAGE_SIZE;
 
   constructor(
     private dialog: MatDialog,

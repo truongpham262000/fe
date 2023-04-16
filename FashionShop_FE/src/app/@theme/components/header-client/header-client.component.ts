@@ -8,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderClientComponent implements OnInit {
 
   constructor() { }
-  user = (localStorage.getItem('token') !== '')? localStorage.getItem('token') : null;
+  user = (localStorage.getItem('login') !== '')? localStorage.getItem('login') : null;
   ngOnInit(): void {
+    
   }
 
   deleteToken(){
-    localStorage.removeItem('token')
+    localStorage.removeItem('login')
   }
 
   

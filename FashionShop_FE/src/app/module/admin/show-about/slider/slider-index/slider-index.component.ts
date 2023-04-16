@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonService } from '../../../../../@core/customs/common.service';
-import { STATUS_ACTION } from '../../../../../@core/customs/constants';
+import { STATUS_ACTION, PAGE_SIZE } from '../../../../../@core/customs/constants';
 import { DialogConfirmComponent } from '../../../../../@theme/components/template/dialog/dialog-confirm/dialog-confirm.component';
 import { SliderCrudComponent } from '../slider-crud/slider-crud.component';
 import { SliderService } from '../slider.service';
@@ -13,7 +13,8 @@ import { SliderService } from '../slider.service';
 })
 export class SliderIndexComponent  {
   searchText;
-  p;
+  p = 1;
+  size = PAGE_SIZE;
 
   constructor(
     private dialog: MatDialog,
