@@ -14,11 +14,11 @@ export class BodyClientNewArrivalsComponent implements OnInit {
   targetMen: Product[] = [];
   targetWoment: Product[] = [];
   targetAccesstories: Product[] = [];
-  checkFavorites: number = 0;
+  checkFavorites: boolean = false;
 
-  checkFavoriteClick(val: number) {
-    this.checkFavorites != val;
-    console.log(this.checkFavorites)
+  checkFavoriteClick(val) {
+    this.checkFavorites = !this.checkFavorites;
+    console.log(val)
   }
 
   ngOnInit(): void {

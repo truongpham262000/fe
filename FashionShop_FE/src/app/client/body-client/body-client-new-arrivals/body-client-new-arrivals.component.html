@@ -169,9 +169,9 @@
                                     <img [src]="item.productImage" height="350px"
                                         class="card-img-top" alt="iPhone" />
                                     <div class="mask">
-                                        <div class="d-flex justify-content-start align-items-start h-100" (click)="checkFavoriteClick(checkFavorites)">
-                                            <h5><span class="badge pt-2 h5 ms-3 mt-3"
-                                                [ngClass]="{'text-primary': checkFavorites == 0,'text-danger': checkFavorites == 1}">
+                                        <div class="d-flex justify-content-start align-items-start h-100">
+                                            <h5><span class="badge pt-2 h5 ms-3 mt-3" (click)="checkFavoriteClick(val)"
+                                                [ngClass]="{'text-primary': checkFavorites == false,'text-danger': checkFavorite == true}">
                                                 <i class="fas fa-heart" style="font-size: 20px;"></i>
                                             </span></h5>
                                         </div>
