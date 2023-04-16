@@ -23,7 +23,7 @@ export class CategoryProductComponent implements OnInit {
     this.selectValue = this.listSort[0].value;
   }
 
-  listSort: any[] = [{text: 'Giá tăng dần',value: 0},{text: 'Giá giảm dần',value: 1}];
+  listSort: any[] = [{text: 'Tất cả', value: ''},{text: 'Giá tăng dần',value: 'asc'},{text: 'Giá giảm dần',value: 'desc'}];
   selectValue: number;
 
   productCategory: any[];

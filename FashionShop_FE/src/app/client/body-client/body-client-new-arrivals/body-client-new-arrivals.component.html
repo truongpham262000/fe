@@ -19,14 +19,19 @@
                                         data-mdb-ripple-color="light">
                                     <img [src]="item.productImage" height="350px"
                                         class="card-img-top" alt="iPhone" />
-                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-start h-100">
+                                            <h5><span class="badge pt-2 h5 ms-3 mt-3 text-primary">
+                                                <i class="fas fa-heart" style="font-size: 20px;"></i>
+                                            </span></h5>
+                                        </div>
+                                    </div>
                                     <div class="mask">
                                         <div class="d-flex justify-content-start align-items-end h-100"></div>
                                     </div>
                                     <div class="hover-overlay">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                     </div>
-                                    </a>
                                 </div>
                                 <div class="card-body text-center">
                                     <a href="" class="text-reset">
@@ -52,11 +57,16 @@
                                         data-mdb-ripple-color="light">
                                     <img [src]="item.productImage" height="350px"
                                         class="card-img-top" alt="iPhone" />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-start h-100">
+                                            <h5><span class="badge pt-2 h5 ms-3 mt-3 text-primary">
+                                                <i class="fas fa-heart" style="font-size: 20px;"></i>
+                                            </span></h5>
                                         </div>
-                                    </a>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
                                 </div>
                                 <div class="card-body text-center">
                                     <a href="" class="text-reset">
@@ -82,14 +92,19 @@
                                         data-mdb-ripple-color="light">
                                     <img [src]="item.productImage" height="350px"
                                         class="card-img-top" alt="iPhone" />
-                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-start h-100">
+                                            <h5><span class="badge pt-2 h5 ms-3 mt-3 text-primary">
+                                                <i class="fas fa-heart" style="font-size: 20px;"></i>
+                                            </span></h5>
+                                        </div>
+                                    </div>
                                     <div class="mask">
                                         <div class="d-flex justify-content-start align-items-end h-100"></div>
                                     </div>
                                     <div class="hover-overlay">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                     </div>
-                                    </a>
                                 </div>
                                 <div class="card-body text-center">
                                     <a href="" class="text-reset">
@@ -106,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-                  </nb-tab>
+                </nb-tab>
                 <nb-tab tabTitle="THỜI TRANG NỮ" responsive>
                     <div class="row">
                         <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of targetWoment | slice:0:4">
@@ -115,14 +130,19 @@
                                         data-mdb-ripple-color="light">
                                     <img [src]="item.productImage" height="350px"
                                         class="card-img-top" alt="iPhone" />
-                                    <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-start h-100">
+                                            <h5><span class="badge pt-2 h5 ms-3 mt-3 text-primary">
+                                                <i class="fas fa-heart" style="font-size: 20px;"></i>
+                                            </span></h5>
+                                        </div>
+                                    </div>
                                     <div class="mask">
                                         <div class="d-flex justify-content-start align-items-end h-100"></div>
                                     </div>
                                     <div class="hover-overlay">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                     </div>
-                                    </a>
                                 </div>
                                 <div class="card-body text-center">
                                     <a href="" class="text-reset">
@@ -148,16 +168,22 @@
                                         data-mdb-ripple-color="light">
                                     <img [src]="item.productImage" height="350px"
                                         class="card-img-top" alt="iPhone" />
-                                    <a href="#!">
-                                        <div class="mask m-2">
-                                            <div class="d-flex justify-content-start align-items-start h-100">
-                                                <h5><span class="badge bg-success ms-2">mới</span></h5>
-                                            </div>
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-start h-100" (click)="checkFavoriteClick(checkFavorites)">
+                                            <h5><span class="badge pt-2 h5 ms-3 mt-3"
+                                                [ngClass]="{'text-primary': checkFavorites == 0,'text-danger': checkFavorites == 1}">
+                                                <i class="fas fa-heart" style="font-size: 20px;"></i>
+                                            </span></h5>
                                         </div>
-                                        <div class="hover-overlay">
-                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                    <div class="mask m-2">
+                                        <div class="d-flex justify-content-start align-items-end h-100">
+                                            <h5><span class="badge bg-success ms-2">mới</span></h5>
                                         </div>
-                                    </a>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
                                 </div>
                                 <div class="card-body text-center">
                                     <a href="" class="text-reset">

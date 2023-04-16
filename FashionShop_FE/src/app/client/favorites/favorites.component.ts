@@ -10,10 +10,13 @@ export class FavoritesComponent implements OnInit {
   constructor(private _service: FavoritesService) {}
   target: any[];
 
+  userID = localStorage.getItem("login");
+
   ngOnInit(): void {
     this._service.selectCategory().subscribe((res) => {
       this.target = [{ name: "Tất cả", categoryId: 0 }, ...res];
     });
+    
     this._service.selectProduct().subscribe((res) => {
       this.productCategory = res;
     });
