@@ -34,6 +34,10 @@ export class CartIndexComponent implements OnInit {
     });
   }
 
+  resetTextSearch() {
+    this.searchText = null;
+  }
+
   openCreateDialog(){
     this.dialog.open(CartCrudComponent,
       this.commonService.configDialog("70%",{

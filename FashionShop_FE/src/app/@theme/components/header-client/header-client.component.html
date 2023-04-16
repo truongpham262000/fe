@@ -64,8 +64,9 @@
                             <li><a href="#">Trang chủ</a></li>
                             <li><a href="product" >Cửa hàng</a></li>
                             <li><a href="favorites">Sản phẩm yêu thích</a></li>
-                            <li><a href="about" routerLinkActive="text-danger">Bài viết</a></li>
+                            <li><a href="about">Bài viết</a></li>
                             <li><a href="contact" >Liên hệ</a></li>
+                            <li *ngIf="target.rolesId === roleAction.Admin"><a href="admin" >Quản trị</a></li>
                         </ul>
                         <ul class="navbar_user">
                             <li><a href="user-info"><i class="fa fa-user" aria-hidden="true"></i></a></li>

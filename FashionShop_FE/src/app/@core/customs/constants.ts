@@ -127,3 +127,12 @@ export const STATUS_ACTION = {
   records: 8,
   delete: 99
 };
+
+export const ROLE_ACTION = {
+  Admin: 1,
+  Add: 2,
+  Update: 3,
+  Insert: 4,
+  Delete: 5,
+  Client: 6
+}

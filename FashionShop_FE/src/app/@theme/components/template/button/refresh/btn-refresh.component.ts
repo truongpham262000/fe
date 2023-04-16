@@ -17,6 +17,6 @@ export class BtnRefreshComponent implements OnInit {
     ngOnInit(): void {
         this.text = this.text ?? LBL_DISPLAY.refresh;
         this.disabled  = this.disabled ?? false;
-        this.color = this.color ?? 'outline-secondary';
+        this.color = this.color ?? 'primary';
     }
 }
