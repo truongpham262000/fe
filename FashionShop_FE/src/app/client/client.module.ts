@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { LoginModule } from './login/login.module';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SortPipe } from '../@core/customs/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AboutComponent,
     UserInforComponent,
     RegisterComponent,
+    SortPipe
   ],
   imports: [
     CommonModule,
@@ -44,6 +46,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgSelectModule,
     NgxPaginationModule,
     NbToastrModule
-  ]
+  ],
+  providers: [SortPipe]
 })
 export class ClientModule { }

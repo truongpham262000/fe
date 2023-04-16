@@ -41,7 +41,7 @@
                     role="tabpanel" aria-labelledby="v-tabs-home-tab"
                 >
                     <div class="row">
-                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of productCategory| paginate: { itemsPerPage: 8, currentPage: p }">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of productCategory | sort: selectValue : 'price' | paginate: { itemsPerPage: 8, currentPage: p }">
                             <div class="card">
                                 <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                                         data-mdb-ripple-color="light">
@@ -84,7 +84,7 @@
                     role="tabpanel" aria-labelledby="v-tabs-home-tab"
                 >
                     <div class="row">
-                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of productCategory">
+                        <div class="col-md-3 col-lg-3 mt-3 mb-4 mb-lg-0" *ngFor="let item of productCategory | sort: selectValue : 'price'">
                             <div class="card">
                                 <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                                         data-mdb-ripple-color="light">
