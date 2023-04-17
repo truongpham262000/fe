@@ -26,7 +26,10 @@ export class SalesIndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData();
+  }
 
+  resetTextSearch() {
+    this.searchText = null;
   }
 
   loadData(){

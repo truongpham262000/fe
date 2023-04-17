@@ -28,6 +28,10 @@ export class AboutsIndexComponent  {
     this.loadData();
   }
 
+  resetTextSearch() {
+    this.searchText = null;
+  }
+
   loadData(){
     this._service.selectAll().subscribe(res => {
       if(res){

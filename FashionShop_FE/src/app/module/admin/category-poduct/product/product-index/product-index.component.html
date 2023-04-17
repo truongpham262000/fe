@@ -12,7 +12,7 @@
           <div class="input-group">
             <ngx-btn-add data-toggle="tooltip" title="Thêm mới" (click)="openCreateDialog()"></ngx-btn-add>&nbsp;&nbsp;
             <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Nhập nội dung tìm kiếm" name="seach">&nbsp;&nbsp;
-            <ngx-btn-refresh></ngx-btn-refresh>
+            <ngx-btn-refresh (click)="resetTextSearch()"></ngx-btn-refresh>
           </div>
         </div>
       </div>

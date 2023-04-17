@@ -28,6 +28,10 @@ export class CommentsIndexComponent implements OnInit {
     this.loadData();
   }
 
+  resetTextSearch() {
+    this.searchText = null;
+  }
+
   loadData(){
     this._service.selectAll().subscribe(res => {
       this.target = res;
