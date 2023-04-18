@@ -23,7 +23,7 @@ export class HeaderClientComponent implements OnInit {
       if(res !== null) {
         this.target = res;
       } else {
-        this.commonService.toastrDanger("Bạn chưa đăng nhập tài khoản của mình.",2000,"Thông báo");
+        this.commonService.toastrDanger("Bạn chưa đăng nhập tài khoản của mình.");
       }
     })
   }

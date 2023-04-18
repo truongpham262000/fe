@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
+import { CommonService } from '../../@core/customs/common.service';
 
 @Component({
   selector: 'ngx-login',
@@ -11,7 +12,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _service: LoginService,
-    private routerService: Router
+    private routerService: Router,
+    private commonService: CommonService
   ) { }
 
   ngOnInit(): void {
@@ -19,21 +21,21 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
-  errortext: string = null;
 
   login(){
     if(this.username == '' || this.password == ''){
-      this.errortext = "Bạn chưa nhập tài khoản hoặc mật khẩu !!!";
+      this.commonService.toastrDanger("Bạn chưa nhập tài khoản hoặc mật khẩu !!!");
     } else {
-      this.errortext = null;
       this._service.selectUser().subscribe(res => {
         for (const item of res) {
           if(item.userName == this.username && item.password === this.password){
             this.routerService.navigateByUrl('/');
             this.setToken(item.userId.toString());
-            this.errortext = "Đăng nhập thành công.";
+            this.commonService.toastrSuccess("Đăng nhập thành công.")
+            break;
           } else {
-            this.errortext = "Tài khoản hoặc mật khẩu không chính xác !!!";
+            this.commonService.toastrDanger("Tài khoản hoặc mật khẩu không chính xác !!!");
+            break;
           }
         }
       })
