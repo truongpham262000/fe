@@ -32,6 +32,35 @@ namespace FashionShop.Api.Controllers
             return await _context.Favorites.ToListAsync();
         }
 
+        [HttpGet]
+        [Route("GetFavoriteInfor")]
+        public async Task<ActionResult<IEnumerable<Product>>> getFavoriteInfor(int userId, int productId)
+        {
+            if (_context.Favorites == null)
+            {
+                return NotFound();
+            }
+
+            var data = (from x in _context.Users
+                        join y in _context.Favorites on x.UserId equals y.UserId
+                        join z in _context.Products on y.ProductId equals z.ProductId
+                        where x.UserId == userId
+                        select z).ToList();
+
+            if (productId != 0)
+            {
+                data = (from x in _context.Users
+                    join y in _context.Favorites on x.UserId equals y.UserId
+                    where x.UserId == userId
+                    join z in _context.Products on y.ProductId equals z.ProductId
+                    where z.CategoryId == productId
+                    select z).ToList();
+            }
+            
+            return Ok(data);
+
+        }
+
         // GET: api/Favorites/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Favorite>> GetFavorite(int id)

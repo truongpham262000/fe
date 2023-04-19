@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Category, Client, Favorite, Product } from '../../@core/data/FashionShopApi.service';
+import { Category, Client, Favorite, Product, User } from '../../@core/data/FashionShopApi.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +17,8 @@ export class FavoritesService {
     return this._api.productsAll();
   }
 
-  selectFavorites(): Observable<Favorite[]> {
-    return this._api.favoritesAll();
+  selectFavorites(keyUser: number, keyProduct?: number): Observable<Product[]> {
+    return this._api.getFavoriteInfor(keyUser, keyProduct);
   }
 
   selectCategoryProduct(key: number): Observable<Product[]> {
