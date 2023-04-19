@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../../@core/data/FashionShopApi.service';
+import { Router, Routes } from '@angular/router';
 import { CategoryProductService } from './category-product.service';
 
 @Component({
@@ -9,7 +9,10 @@ import { CategoryProductService } from './category-product.service';
 })
 export class CategoryProductComponent implements OnInit {
 
-  constructor(private _service: CategoryProductService) { }
+  constructor(
+    private _service: CategoryProductService,
+    private routes: Router
+  ) { }
   target: any[];
   p;
 
@@ -38,6 +41,10 @@ export class CategoryProductComponent implements OnInit {
         this.productCategory = res;
       })
     }
+  }
+
+  detailProduct(id: number) {
+    this.routes.navigate(["/product-details",id])
   }
 
 }

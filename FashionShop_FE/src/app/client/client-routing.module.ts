@@ -21,7 +21,7 @@ export const routes: Routes = [
       { path: 'contact', component: ContactComponent },
       { path: 'product', component: CategoryProductComponent },
       { path: 'favorites', component: FavoritesComponent },
-      { path: 'product-details', component: ProductDetailComponent },
+      { path: 'product-details/:id', component: ProductDetailComponent },
       { path: 'cart', component: CartComponent },
       { path: 'about', component: AboutComponent },
       { path: 'user-info', component: UserInforComponent },

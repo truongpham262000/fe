@@ -158,6 +158,12 @@ export interface IClient {
      */
     favoritesPOST(body?: Favorite | undefined): Observable<Favorite>;
     /**
+     * @param userId (optional) 
+     * @param productId (optional) 
+     * @return Success
+     */
+    getFavoriteInfor(userId?: number | undefined, productId?: number | undefined): Observable<Product[]>;
+    /**
      * @return Success
      */
     favoritesGET(id: number): Observable<Favorite>;
@@ -2142,6 +2148,75 @@ export class Client implements IClient {
             }));
         }
         return _observableOf<Favorite>(null as any);
+    }
+
+    /**
+     * @param userId (optional) 
+     * @param productId (optional) 
+     * @return Success
+     */
+    getFavoriteInfor(userId?: number | undefined, productId?: number | undefined): Observable<Product[]> {
+        let url_ = this.baseUrl + "/api/v1/Favorites/GetFavoriteInfor?";
+        if (userId === null)
+            throw new Error("The parameter 'userId' cannot be null.");
+        else if (userId !== undefined)
+            url_ += "userId=" + encodeURIComponent("" + userId) + "&";
+        if (productId === null)
+            throw new Error("The parameter 'productId' cannot be null.");
+        else if (productId !== undefined)
+            url_ += "productId=" + encodeURIComponent("" + productId) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain; x-api-version=1.0"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetFavoriteInfor(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetFavoriteInfor(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<Product[]>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<Product[]>;
+        }));
+    }
+
+    protected processGetFavoriteInfor(response: HttpResponseBase): Observable<Product[]> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        let _mappings: { source: any, target: any }[] = [];
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : jsonParse(_responseText, this.jsonParseReviver);
+            if (Array.isArray(resultData200)) {
+                result200 = [] as any;
+                for (let item of resultData200)
+                    result200!.push(Product.fromJS(item, _mappings));
+            }
+            else {
+                result200 = <any>null;
+            }
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204 && status !== 201) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<Product[]>(null as any);
     }
 
     /**

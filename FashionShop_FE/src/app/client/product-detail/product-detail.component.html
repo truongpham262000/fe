@@ -1,36 +1,22 @@
 <div class="container single_product_container">
     <div class="row">
-        <div class="col-lg-7">
-            <div class="single_product_pics">
-                <div class="row">
-                    <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
-                        <div class="single_product_thumbnails">
-                            <ul>
-                                <li><img src="../../../assets/color_shop/images/single_1_thumb.jpg" alt="" data-image="../../../assets/color_shop/images/single_1.jpg"></li>
-                                <li class="active"><img src="../../../assets/color_shop/images/single_2_thumb.jpg" alt="" data-image="../../../assets/color_shop/images/single_2.jpg"></li>
-                                <li><img src="../../../assets/color_shop/images/single_3_thumb.jpg" alt="" data-image="../../../assets/color_shop/images/single_3.jpg"></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 image_col order-lg-2 order-1">
-                        <div class="single_product_image">
-                            <div class="single_product_image_background" style="background-image:url(../../../assets/color_shop/images/single_2.jpg)"></div>
-                        </div>
-                    </div>
+        <div class="col-lg-4">
+            <div class="single_product_image">
+                <div class="single_product_image_background">
+                    <img [src]="target.productImage" alt="No image..." width="100%" height="100%">
                 </div>
             </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
             <div class="product_details">
                 <div class="product_details_title">
-                    <h2>Pocket cotton sweatshirt</h2>
-                    <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+                    <h2>{{ target.productName }}</h2>
                 </div>
-                <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
+                <!-- <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
                     <span class="ti-truck"></span><span>Miễn phí vận chuyển</span>
-                </div>
-                <div class="original_price">Giá cũ: $629.99</div>
-                <div class="product_price">Giá mới: $495.00</div>
+                </div> -->
+                <!-- <div class="original_price">Giá cũ: $629.99</div> -->
+                <div class="product_price">Giá: {{ target.price | number: '1.0-0' }}</div>
                 <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                     <span>Số lượng:</span>
                     <div class="quantity_selector">
@@ -38,8 +24,14 @@
                         <span id="quantity_value">1</span>
                         <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
                     </div>
-                    <div class="red_button add_to_cart_button"><a href="#">Thêm vào giỏ hàng</a></div>
+                    <div class="red_button add_to_cart_button"><a href="cart">Thêm vào giỏ hàng</a></div>
                     <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
+                </div>
+                <div class="col-lg-12 d-flex text-left align-items-center pt-3 p-0">
+                    <p>Kích thước:</p>
+                    <div class="col-1 mr-4" *ngFor="let item of sizeProduct| slice: 0:4">
+                        <input type="button" class="btn btn-primary" name="size" [value]="item.sizeName">
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,10 +47,9 @@
         <div class="row">
             <div class="col">
                 <div class="tabs_container">
-                    <ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
-                        <li class="tab active" data-active-tab="tab_1"><span>Mô tả</span></li>
-                        <li class="tab" data-active-tab="tab_2"><span>Thông tin thêm</span></li>
-                        <li class="tab" data-active-tab="tab_3"><span>Bình luận (2)</span></li>
+                    <ul class="tabs d-flex flex-sm-row flex-column align-items-left ml-0 pl-0 align-items-md-center justify-content-left">
+                        <li class="tab active text-uppercase" data-active-tab="tab_1"><span>Mô tả</span></li>
+                        <li class="tab text-uppercase" data-active-tab="tab_2"><span>Bình luận (2)</span></li>
                     </ul>
                 </div>
             </div>
@@ -72,48 +63,25 @@
                     <div class="row">
                         <div class="col-lg-5 desc_col">
                             <div class="tab_title">
-                                <h4>Mô tả</h4>
+                                <h4 class="text-uppercase">Mô tả</h4>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab Additional Info -->
-
-                <div id="tab_2" class="tab_container">
-                    <div class="row">
-                        <div class="col additional_info_col">
-                            <div class="tab_title additional_info_title">
-                                <h4>Thông tin thêm</h4>
+                            <div class="col">
+                                {{ target.description }}
                             </div>
-                            <p>Kích thước:<span>L,M,XL</span></p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Tab Reviews -->
 
-                <div id="tab_3" class="tab_container">
+                <div id="tab_2" class="tab_container">
                     <div class="row">
 
                         <!-- User Reviews -->
 
                         <div class="col-lg-6 reviews_col">
                             <div class="tab_title reviews_title">
-                                <h4>Bình luận (2)</h4>
-                            </div>
-
-                            <!-- User Review -->
-
-                            <div class="user_review_container d-flex flex-column flex-sm-row">
-                                <div class="user">
-                                    <div class="user_pic"></div>
-                                </div>
-                                <div class="review">
-                                    <div class="review_date">27 Aug 2016</div>
-                                    <div class="user_name">Brandon William</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
+                                <h4 class="text-uppercase">Bình luận (2)</h4>
                             </div>
 
                             <!-- User Review -->
@@ -135,22 +103,23 @@
                         <div class="col-lg-6 add_review_col">
 
                             <div class="add_review">
-                                <form id="review_form" action="post">
-                                    <h1>Thêm mới bình luận</h1>
+                                <form #frm="ngForm" (ngSubmit)="save()">
+                                    <h1 class="text-uppercase pb-2">Thêm mới bình luận</h1>
                                     <div class="form-group">
-                                        <label class="form-label" for="review_name">Họ và tên</label>
-                                        <input id="review_name" class="form-control" type="text" name="name" placeholder="Name*" required="required" data-error="Name is required.">
+                                        <label class="form-label required" for="review_name">Họ và tên</label>
+                                        <input id="review_name" class="form-control" type="text" 
+                                            name="name" placeholder="Name*"
+                                            required data-error="Name is required.">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="review_email">Email</label>
-                                        <input id="review_email" class="form-control" type="email" name="email" placeholder="Email*" required="required" data-error="Valid email is required.">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="review_message">Bình luận</label>
-                                        <textarea id="review_message" class="form-control" name="message"  placeholder="Your Review" rows="4" required data-error="Please, leave us a review."></textarea>
+                                        <label class="form-label required" for="review_message">Bình luận</label>
+                                        <textarea id="review_message" class="form-control" 
+                                            name="message"  placeholder="Your Review" rows="4" 
+                                            required data-error="Please, leave us a review.">
+                                        </textarea>
                                     </div>
                                     <div class="text-left text-sm-right">
-                                        <button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Submit">submit</button>
+                                        <button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Submit">Bình luận</button>
                                     </div>
                                 </form>
                             </div>
@@ -163,7 +132,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <!-- Benefit -->

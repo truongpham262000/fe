@@ -23,20 +23,23 @@ export class LoginComponent implements OnInit {
   password: string;
 
   login(){
-    if(this.username == '' || this.password == ''){
+    if(this.username === '' || this.password === ''){
       this.commonService.toastrDanger("Bạn chưa nhập tài khoản hoặc mật khẩu !!!");
     } else {
       this._service.selectUser().subscribe(res => {
+        let checkResult;
         for (const item of res) {
-          if(item.userName == this.username && item.password === this.password){
+          if(item.userName == this.username && item.password == this.password){
             this.routerService.navigateByUrl('/');
             this.setToken(item.userId.toString());
-            this.commonService.toastrSuccess("Đăng nhập thành công.")
-            break;
-          } else {
-            this.commonService.toastrDanger("Tài khoản hoặc mật khẩu không chính xác !!!");
-            break;
+            checkResult = true;
           }
+        }
+
+        if(checkResult == true){
+          this.commonService.toastrSuccess("Đăng nhập thành công.")
+        } else {
+          this.commonService.toastrDanger("Tài khoản hoặc mật khẩu không chính xác !!!");
         }
       })
     }

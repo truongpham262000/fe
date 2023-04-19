@@ -45,7 +45,7 @@
                             <div class="card">
                                 <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                                     data-mdb-ripple-color="light">
-                                    <img [src]="item.productImage" height="350px"
+                                    <img [src]="item.productImage" height="300px"
                                         class="card-img-top" alt="iPhone" />
                                     <div class="mask">
                                         <div class="d-flex justify-content-start align-items-start h-100">
@@ -67,7 +67,7 @@
                                     </a>
                                     <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
                                     <div class="d-flex flex-row">
-                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                        <button type="button" (click)="detailProduct(item.productId)" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
                                             Chi tiết
                                         </button>
                                         <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
@@ -93,7 +93,7 @@
                             <div class="card">
                                 <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                                         data-mdb-ripple-color="light">
-                                    <img [src]="item.productImage" height="350px"
+                                    <img [src]="item.productImage" height="300px"
                                         class="card-img-top" alt="iPhone" />
                                     <div class="mask">
                                         <div class="d-flex justify-content-start align-items-start h-100">

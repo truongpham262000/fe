@@ -40,7 +40,7 @@
                 <td class="align-middle">{{ item.phone }}</td>
                 <td class="align-middle">{{ item.email }}</td>
                 <td class="align-middle">{{ item.address }}</td>
-                <td class="text-center align-middle" [ngClass]="{'text-success': item.status === 1,'text-danger': item.status === 0}">{{ item.status === 1? 'Đã phản hồi':'Chưa phản hổi' }}</td>
+                <td class="text-center align-middle" [ngClass]="{'text-success': item.status === 1,'text-danger': item.status === 0}">{{ item.status === 1? 'Đã phản hồi':'Chưa phản hồi' }}</td>
                 <td class="text-center align-middle">
                   <ngx-icon-info title="Xem chi tiết" style="cursor: pointer;" (click)="openDetailDialog(item.feedbackId)"></ngx-icon-info>&nbsp;&nbsp;
                   <ngx-icon-edit title="Cập nhật" style="cursor: pointer;" (click)="openEditDialog(item.feedbackId)"></ngx-icon-edit>&nbsp;&nbsp;

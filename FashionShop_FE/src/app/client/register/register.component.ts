@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
       this.commonService.toastrDanger("Tài khoản này đã có người đăng ký");
     } else if(this.listData.find(x =>x.email === this.selectUser.email)){
       this.commonService.toastrDanger("Email của bạn đã đăng ký tài khoản khác.");
-    } else if(this.checkPassWord === this.selectUser.password){
+    } else if(this.checkPassWord !== this.selectUser.password){
       this.checkPassWord = null;
       this.commonService.toastrDanger("Mật khẩu nhập lại không chính xác.");
     } else {
