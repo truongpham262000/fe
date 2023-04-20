@@ -16,7 +16,7 @@
                     <span class="ti-truck"></span><span>Miễn phí vận chuyển</span>
                 </div> -->
                 <!-- <div class="original_price">Giá cũ: $629.99</div> -->
-                <div class="product_price">Giá: {{ target.price | number: '1.0-0' }}</div>
+                <div class="product_price">Giá: {{ target.price | number: '1.0-0' }}<sup>đ</sup></div>
                 <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                     <span>Số lượng:</span>
                     <div class="quantity_selector">
@@ -41,97 +41,66 @@
 
 <!-- Tabs -->
 
-<div class="tabs_section_container">
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="tabs_container">
-                    <ul class="tabs d-flex flex-sm-row flex-column align-items-left ml-0 pl-0 align-items-md-center justify-content-left">
-                        <li class="tab active text-uppercase" data-active-tab="tab_1"><span>Mô tả</span></li>
-                        <li class="tab text-uppercase" data-active-tab="tab_2"><span>Bình luận (2)</span></li>
-                    </ul>
+<div class="row container">
+    <nb-tabset>
+        <nb-tab tabTitle="MÔ TẢ" responsive>
+            <div class="row">
+                <div class="col-lg-5 desc_col">
+                    <div class="tab_title">
+                        <h4 class="text-uppercase">Mô tả</h4>
+                    </div>
+                    <div class="col">
+                        {{ target.description }}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-
-                <!-- Tab Description -->
-
-                <div id="tab_1" class="tab_container active">
-                    <div class="row">
-                        <div class="col-lg-5 desc_col">
-                            <div class="tab_title">
-                                <h4 class="text-uppercase">Mô tả</h4>
-                            </div>
-                            <div class="col">
-                                {{ target.description }}
-                            </div>
+        </nb-tab>
+        <nb-tab tabTitle="BÌNH LUẬN (2)" responsive>
+            <div class="row">
+                <!-- User Reviews -->
+                <div class="col-lg-6 reviews_col">
+                    <div class="tab_title reviews_title">
+                        <h4 class="text-uppercase">Bình luận (2)</h4>
+                    </div>
+                    <!-- User Review -->
+                    <div class="user_review_container d-flex flex-column flex-sm-row">
+                        <div class="user">
+                            <div class="user_pic"></div>
+                        </div>
+                        <div class="review">
+                            <div class="review_date">27 Aug 2016</div>
+                            <div class="user_name">Brandon William</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Tab Reviews -->
-
-                <div id="tab_2" class="tab_container">
-                    <div class="row">
-
-                        <!-- User Reviews -->
-
-                        <div class="col-lg-6 reviews_col">
-                            <div class="tab_title reviews_title">
-                                <h4 class="text-uppercase">Bình luận (2)</h4>
+                <!-- Add Review -->
+                <div class="col-lg-6 add_review_col">
+                    <div class="add_review">
+                        <form #frm="ngForm" (ngSubmit)="save()">
+                            <h1 class="text-uppercase pb-2">Thêm mới bình luận</h1>
+                            <div class="form-group">
+                                <label class="form-label required" for="review_name">Họ và tên</label>
+                                <input id="review_name" class="form-control" type="text" 
+                                    name="name" placeholder="Name*"
+                                    required data-error="Name is required.">
                             </div>
-
-                            <!-- User Review -->
-
-                            <div class="user_review_container d-flex flex-column flex-sm-row">
-                                <div class="user">
-                                    <div class="user_pic"></div>
-                                </div>
-                                <div class="review">
-                                    <div class="review_date">27 Aug 2016</div>
-                                    <div class="user_name">Brandon William</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
+                            <div class="form-group">
+                                <label class="form-label required" for="review_message">Bình luận</label>
+                                <textarea id="review_message" class="form-control" 
+                                    name="message"  placeholder="Your Review" rows="4" 
+                                    required data-error="Please, leave us a review.">
+                                </textarea>
                             </div>
-                        </div>
-
-                        <!-- Add Review -->
-
-                        <div class="col-lg-6 add_review_col">
-
-                            <div class="add_review">
-                                <form #frm="ngForm" (ngSubmit)="save()">
-                                    <h1 class="text-uppercase pb-2">Thêm mới bình luận</h1>
-                                    <div class="form-group">
-                                        <label class="form-label required" for="review_name">Họ và tên</label>
-                                        <input id="review_name" class="form-control" type="text" 
-                                            name="name" placeholder="Name*"
-                                            required data-error="Name is required.">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label required" for="review_message">Bình luận</label>
-                                        <textarea id="review_message" class="form-control" 
-                                            name="message"  placeholder="Your Review" rows="4" 
-                                            required data-error="Please, leave us a review.">
-                                        </textarea>
-                                    </div>
-                                    <div class="text-left text-sm-right">
-                                        <button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Submit">Bình luận</button>
-                                    </div>
-                                </form>
+                            <div class="text-left text-sm-right">
+                                <button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Submit">Bình luận</button>
                             </div>
-
-                        </div>
-
+                        </form>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </div>
+        </nb-tab>
+    </nb-tabset>
 </div>
 
 <!-- Benefit -->

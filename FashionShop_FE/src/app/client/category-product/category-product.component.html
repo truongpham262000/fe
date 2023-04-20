@@ -1,8 +1,8 @@
 <div class="container product_section_container">
     <div class="row w-100">
         <div class="col-md-12 col-lg-12 d-flex">
-            <div class="col-lg-10">
-                <h5 class="text-info text-uppercase">Danh mục cửa hàng <i class="fa fa-cart-plus" aria-hidden="true"></i></h5>
+            <div class="col-lg-10 p-0">
+                <h5 class="text-info text-uppercase p-0">Danh mục cửa hàng <i class="fa fa-cart-plus" aria-hidden="true"></i></h5>
             </div>
             <div class="col-lg-2">
                 <div class="form-group">
@@ -65,12 +65,12 @@
                                     <a href="" class="text-reset">
                                         <h5 class="card-title mb-3">{{ item.productName }}</h5>
                                     </a>
-                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} <sup>đ</sup></h6>
                                     <div class="d-flex flex-row">
                                         <button type="button" (click)="detailProduct(item.productId)" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
                                             Chi tiết
                                         </button>
-                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                        <button type="button" (click)="addToCard(item.productId)"  class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
                                     </div>
                                 </div>
                             </div>
@@ -113,12 +113,12 @@
                                     <a href="" class="text-reset">
                                         <h5 class="card-title mb-3">{{ item.productName }}</h5>
                                     </a>
-                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} VND</h6>
+                                    <h6 class="mb-3">Giá: {{ item.price | number: '1.0-0' }} <sup>đ</sup></h6>
                                     <div class="d-flex flex-row">
-                                        <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                                        <button type="button" (click)="detailProduct(item.productId)" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
                                             Chi tiết
                                         </button>
-                                        <button type="button" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
+                                        <button type="button" (click)="addToCard(item.productId)" class="btn btn-danger flex-fill ms-1">Giỏ hàng</button>
                                     </div>
                                 </div>
                             </div>

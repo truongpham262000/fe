@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes } from '@angular/router';
+import { Cart, CartItem, Product, User } from '../../@core/data/FashionShopApi.service';
 import { CategoryProductService } from './category-product.service';
 
 @Component({
@@ -15,6 +16,8 @@ export class CategoryProductComponent implements OnInit {
   ) { }
   target: any[];
   p;
+
+  Userid: number = localStorage.getItem('login') !== null ? parseInt(localStorage.getItem('login')) : null;
 
   ngOnInit(): void {
     this._service.selectCategory().subscribe(res => {
@@ -43,8 +46,62 @@ export class CategoryProductComponent implements OnInit {
     }
   }
 
+  //Add to card
+  selectOneProduct: Product = new Product();
+  selectAllCartItem: CartItem[];
+  listCart: Cart = new Cart();
+  listUser: User = new User();
+  listCartItem: CartItem = new CartItem();
+
+  addToCard(id: number){
+    if(this.Userid !== null){
+      this._service.selectOneProduct(id).subscribe(res => {
+        if(res) {
+          this.selectOneProduct = res;
+        }
+      })
+
+      this._service.selectUser(this.Userid).subscribe(res => {
+        if(res) {
+          this.listUser = res;
+        }
+      })
+
+      //Insert to cart
+      this.listCart.userId = this.listUser.userId;
+      this.listCart.fullName = this.listUser.fullName;
+      this.listCart.phoneNumber = this.listUser.phoneNumber;
+      this.listCart.email = this.listUser.email;
+
+      this._service.insertCart(this.listCart).subscribe();
+  
+      this._service.selectAllCartItem().subscribe(res => {
+        if(res) {
+          let quantity = 0;
+          let id = 0;
+          for (const item of res) {
+            if(item.cartId === this.listCart.cartId && item.productId === id) {
+              quantity = item.quantity + 1;
+              id = item.cartItemId;
+            }
+          }
+
+          this.listCartItem.quantity = quantity;
+          this._service.updateCartItem(id, this.listCartItem).subscribe();
+        }
+      })
+    } else {
+      this.routes.navigateByUrl("/login")
+    }
+    
+  }
+
   detailProduct(id: number) {
-    this.routes.navigate(["/product-details",id])
+    if(this.Userid !== null){
+      this.routes.navigate(["/product-details",id])
+    } else {
+      this.routes.navigateByUrl("/login")
+    }
   }
 
 }

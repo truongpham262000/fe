@@ -55,4 +55,12 @@ export class FavoritesComponent implements OnInit {
       this.productCategory = [];
     }
   }
+
+  detailProduct(id: number) {
+    if(this.userID !== null){
+      this.routes.navigate(["/product-details", id]);
+    } else {
+      this.routes.navigateByUrl("/login");
+    }
+  }
 }
